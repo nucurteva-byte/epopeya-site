@@ -2,9 +2,11 @@
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('active');
-});
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+}
 
 // MODAL FOR FORM
 const testDriveBtn = document.getElementById('testDriveBtn');
@@ -14,17 +16,17 @@ const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 
 function openModal() {
-  modal.classList.add('open');
+  if (modal) modal.classList.add('open');
 }
 
 function closeModalFunc() {
-  modal.classList.remove('open');
+  if (modal) modal.classList.remove('open');
 }
 
-testDriveBtn.addEventListener('click', openModal);
-testDriveBtn2.addEventListener('click', openModal);
-contactBtn.addEventListener('click', openModal);
-closeModal.addEventListener('click', closeModalFunc);
+if (testDriveBtn) testDriveBtn.addEventListener('click', openModal);
+if (testDriveBtn2) testDriveBtn2.addEventListener('click', openModal);
+if (contactBtn) contactBtn.addEventListener('click', openModal);
+if (closeModal) closeModal.addEventListener('click', closeModalFunc);
 
 window.addEventListener('click', (e) => {
   if (e.target === modal) {
@@ -39,16 +41,19 @@ const saturation = document.getElementById('saturation');
 const previewCar = document.getElementById('previewCar');
 
 function updatePreview() {
-  const color = colorWheel.value;
   const b = brightness.value;
   const s = saturation.value;
   previewCar.style.filter = brightness(${b}%) saturate(${s}%);
-  previewCar.style.backgroundColor = color;
 }
 
-colorWheel.addEventListener('input', updatePreview);
-brightness.addEventListener('input', updatePreview);
-saturation.addEventListener('input', updatePreview);
+if (colorWheel) {
+  colorWheel.addEventListener('input', () => {
+    previewCar.style.filter = brightness(${brightness.value}%) saturate(${saturation.value}%);
+  });
+}
+
+if (brightness) brightness.addEventListener('input', updatePreview);
+if (saturation) saturation.addEventListener('input', updatePreview);
 
 document.getElementById('randomColor').addEventListener('click', () => {
   const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16);
