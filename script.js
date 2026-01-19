@@ -1,81 +1,57 @@
-const burger = document.getElementById("burger");
-const mobileMenu = document.getElementById("mobileMenu");
+// BURGER MENU
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-burger.addEventListener("click", () => {
-  mobileMenu.classList.toggle("open");
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
 });
 
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
-const testDriveBtn = document.getElementById("testDriveBtn");
-const testDriveBtn2 = document.getElementById("testDriveBtn2");
-const contactBtn = document.getElementById("contactBtn");
+// MODAL FOR FORM
+const testDriveBtn = document.getElementById('testDriveBtn');
+const testDriveBtn2 = document.getElementById('testDriveBtn2');
+const contactBtn = document.getElementById('contactBtn');
+const modal = document.getElementById('modal');
+const closeModal = document.getElementById('closeModal');
 
 function openModal() {
-  modal.style.display = "block";
+  modal.classList.add('open');
 }
 
 function closeModalFunc() {
-  modal.style.display = "none";
+  modal.classList.remove('open');
 }
 
-testDriveBtn.addEventListener("click", openModal);
-testDriveBtn2.addEventListener("click", openModal);
-contactBtn.addEventListener("click", openModal);
-closeModal.addEventListener("click", closeModalFunc);
+testDriveBtn.addEventListener('click', openModal);
+testDriveBtn2.addEventListener('click', openModal);
+contactBtn.addEventListener('click', openModal);
+closeModal.addEventListener('click', closeModalFunc);
 
-window.addEventListener("click", (e) => {
+window.addEventListener('click', (e) => {
   if (e.target === modal) {
     closeModalFunc();
   }
 });
 
-const colorWheel = document.getElementById("colorWheel");
-const brightness = document.getElementById("brightness");
-const saturation = document.getElementById("saturation");
-const previewCar = document.getElementById("previewCar");
-const randomColor = document.getElementById("randomColor");
+// COLOR STYLE
+const colorWheel = document.getElementById('colorWheel');
+const brightness = document.getElementById('brightness');
+const saturation = document.getElementById('saturation');
+const previewCar = document.getElementById('previewCar');
 
-function applyColor() {
-  const bright = brightness.value;
-  const sat = saturation.value;
-
-  previewCar.style.filter = brightness(${bright}%) saturate(${sat}%);
+function updatePreview() {
+  const color = colorWheel.value;
+  const b = brightness.value;
+  const s = saturation.value;
+  previewCar.style.filter = brightness(${b}%) saturate(${s}%);
+  previewCar.style.backgroundColor = color;
 }
 
-colorWheel.addEventListener("input", applyColor);
-brightness.addEventListener("input", applyColor);
-saturation.addEventListener("input", applyColor);
+colorWheel.addEventListener('input', updatePreview);
+brightness.addEventListener('input', updatePreview);
+saturation.addEventListener('input', updatePreview);
 
-randomColor.addEventListener("click", () => {
-  const randomHex = "#" + Math.floor(Math.random()*16777215).toString(16);
+document.getElementById('randomColor').addEventListener('click', () => {
+  const randomHex = '#' + Math.floor(Math.random()*16777215).toString(16);
   colorWheel.value = randomHex;
-  applyColor();
+  updatePreview();
 });
-
-const timer = document.getElementById("timer");
-
-function startTimer() {
-  const target = new Date();
-  target.setDate(target.getDate() + 7);
-
-  const interval = setInterval(() => {
-    const now = new Date();
-    const diff = target - now;
-
-    if (diff <= 0) {
-      clearInterval(interval);
-      timer.innerText = "Серия закрыта";
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const mins = Math.floor((diff / (1000 * 60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-
-    timer.innerText = ${days}д ${hours}ч ${mins}м ${secs}с;
-  }, 1000);
-}
-
-startTimer();
