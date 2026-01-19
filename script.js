@@ -41,22 +41,28 @@ const saturation = document.getElementById('saturation');
 const previewCar = document.getElementById('previewCar');
 
 function updatePreview() {
-  const b = brightness.value;
-  const s = saturation.value;
-  previewCar.style.filter = brightness(${b}%) saturate(${s}%);
+  const b = brightness ? brightness.value : 100;
+  const s = saturation ? saturation.value : 100;
+  if (previewCar) {
+    previewCar.style.filter = brightness(${b}%) saturate(${s}%);
+  }
 }
 
 if (colorWheel) {
-  colorWheel.addEventListener('input', () => {
-    previewCar.style.filter = brightness(${brightness.value}%) saturate(${saturation.value}%);
-  });
+  colorWheel.addEventListener('input', updatePreview);
+}
+if (brightness) {
+  brightness.addEventListener('input', updatePreview);
+}
+if (saturation) {
+  saturation.addEventListener('input', updatePreview);
 }
 
-if (brightness) brightness.addEventListener('input', updatePreview);
-if (saturation) saturation.addEventListener('input', updatePreview);
-
-document.getElementById('randomColor').addEventListener('click', () => {
-  const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16);
-  colorWheel.value = randomHex;
-  updatePreview();
-});
+const randomBtn = document.getElementById('randomColor');
+if (randomBtn) {
+  randomBtn.addEventListener('click', () => {
+    const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    if (colorWheel) colorWheel.value = randomHex;
+    updatePreview();
+  });
+}
