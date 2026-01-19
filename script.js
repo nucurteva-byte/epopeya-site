@@ -51,7 +51,7 @@ brightness.addEventListener('input', updatePreview);
 saturation.addEventListener('input', updatePreview);
 
 document.getElementById('randomColor').addEventListener('click', () => {
-  const randomHex = '#' + Math.floor(Math.random()*16777215).toString(16);
+  const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16);
   colorWheel.value = randomHex;
   updatePreview();
 });
