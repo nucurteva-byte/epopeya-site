@@ -9,11 +9,10 @@
 <body>
 
 <header class="header">
-  <div class="container">
+  <div class="container header-flex">
     <div class="logo">СВО</div>
     <nav class="nav">
       <a href="#hero">Главная</a>
-      <a href="#specs">Характеристики</a>
       <a href="#collection">Коллекция</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contact">Контакты</a>
@@ -22,66 +21,41 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section id="hero" class="hero">
   <div class="container hero-grid">
     <div>
       <h1>ЭПОПЕЯ</h1>
-      <p>Самый мощный автомобиль в мире. V10 • 2228 л.с. • 0–100 за 1.2 сек</p>
+      <p>V10 · 2228 л.с. · 0–100 за 1,2 сек</p>
       <button class="btn" id="testDriveBtn2">Тест-драйв</button>
     </div>
-    <img src="anapovskiy_mazut.png" alt="Эпопея">
+    <img src="anapovskiy_mazut.png" alt="ЭПОПЕЯ">
   </div>
 </section>
 
-<!-- SPECS -->
-<section id="specs" class="section">
-  <div class="container">
-    <h2>Характеристики</h2>
-    <ul class="specs">
-      <li>Двигатель: V10</li>
-      <li>Мощность: 2228 л.с.</li>
-      <li>Разгон 0–100: 1.2 сек</li>
-      <li>Длина: 6 м</li>
-      <li>Ширина: 3 м</li>
-    </ul>
-  </div>
-</section>
-
-<!-- COLLECTION -->
 <section id="collection" class="section">
   <div class="container">
     <h2>Коллекция</h2>
 
-    <div class="car-grid">
+    <div class="grid">
 
-      <!-- Ашкудишка -->
-      <div class="car-card">
+      <div class="card">
         <img src="ashkudishka.png" alt="Ашкудишка">
         <h3>Ашкудишка Личи 300 тяг</h3>
-        <p>Шедевр инженерии со встроенным кальяном вместо подстаканников.</p>
+        <p>Шедевр инженерии со встроенным кальяном вместо подстаканников</p>
         <strong>$300 000</strong>
       </div>
 
-      <!-- CocaCola -->
-      <div class="car-card">
+      <div class="card">
         <img src="cocacola_zero.png" alt="CocaCola Zero">
         <h3>CocaCola Zero</h3>
-        <p>
-          Лимитированная коллекция для наших РППшниц.<br>
-          <em>«Хочешь есть — попей водички.»</em>
-        </p>
+        <p>Лимитированная серия.<br>«Хочешь есть — попей водички»</p>
         <strong>$239 000</strong>
       </div>
 
-      <!-- Героиновая игла -->
-      <div class="car-card">
+      <div class="card">
         <img src="heroin_needle.png" alt="Героиновая игла">
         <h3>Героиновая игла</h3>
-        <p>
-          Лимитированная коллекция под заказ.<br>
-          <em>«Райское наслаждение»</em>
-        </p>
+        <p>Под заказ.<br>«Райское наслаждение»</p>
         <strong>$670 000</strong>
       </div>
 
@@ -89,43 +63,29 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews" class="section dark">
   <div class="container">
     <h2>Отзывы</h2>
 
-    <div class="review-grid">
-
-      <div class="review-card">
-        <img src="review1.png" alt="Отзыв 1">
-        <p>
-          ⭐⭐⭐⭐⭐<br>
-          «После покупки ЭПОПЕИ я перестал смотреть на Bugatti.
-          Теперь Bugatti смотрит на меня.»
-        </p>
-        <strong>— Артем, Москва</strong>
+    <div class="grid">
+      <div class="review">
+        <img src="review1.png" alt="Отзыв">
+        <p>⭐⭐⭐⭐⭐<br>Bugatti больше не впечатляет</p>
+        <strong>Артём, Москва</strong>
       </div>
 
-      <div class="review-card">
-        <img src="review2.png" alt="Отзыв 2">
-        <p>
-          ⭐⭐⭐⭐⭐<br>
-          «Разгон такой, что мысли отстают.
-          Лучшее вложение денег в моей жизни.»
-        </p>
-        <strong>— Мария, Санкт-Петербург</strong>
+      <div class="review">
+        <img src="review2.png" alt="Отзыв">
+        <p>⭐⭐⭐⭐⭐<br>Разгон быстрее мыслей</p>
+        <strong>Мария, СПб</strong>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
   <div class="container">
-    <h2>Контакты</h2>
-    <p>Телефон: +7#######</p>
-    <p>Адрес: ######</p>
+    <h2>Связаться</h2>
 
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSfbQetzN7Q9iTNP_1kSLPTCkOw82mdxzgcBCYHa6gpnsdiPSQ/viewform?embedded=true"
@@ -134,10 +94,9 @@
   </div>
 </section>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
-  <div class="modal-content">
-    <span id="closeModal">×</span>
+  <div class="modal-box">
+    <span id="closeModal">✕</span>
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSfbQetzN7Q9iTNP_1kSLPTCkOw82mdxzgcBCYHa6gpnsdiPSQ/viewform?embedded=true"
       width="100%" height="500" frameborder="0">
