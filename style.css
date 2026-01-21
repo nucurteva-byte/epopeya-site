@@ -1,185 +1,309 @@
-/* === Общие стили === */
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
+  background: #070707;
   color: #fff;
 }
 
 .container {
-  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
+/* HEADER */
 .header {
-  background: rgba(0,0,0,0.6);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 15px 0;
 }
 
-.header-row {
+.header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
 }
 
 .logo {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.btn {
-  padding: 10px 20px;
-  background: #ff0000;
-  border: none;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.section {
-  padding: 60px 0;
-}
-
-.section.dark {
-  background: #111;
-}
-
-.hero {
-  padding: 80px 0;
-}
-
-.hero-grid {
+.nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero-img {
-  width: 50%;
-  max-width: 500px;
-}
-
-.unique-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.unique-card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 10px;
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.cards {
+.btn {
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  background: #c9a02a;
+  color: #000;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #c9a02a;
+  color: #fff;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.9);
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1500;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  padding-top: 110px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 56px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+/* SECTIONS */
+.luxury-section {
+  padding: 60px 0;
+}
+
+.spec-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.card {
-  background: rgba(255,255,255,0.08);
+.spec-card {
+  background: rgba(255,255,255,0.06);
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+  border-radius: 12px;
 }
 
-.card img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-}
-
-.ash {
-  position: relative;
-}
-
-.smoke {
-  position: absolute;
-  top: -10px;
-  right: 10px;
-  width: 80px;
-  height: 80px;
-  background: rgba(255,255,255,0.1);
-  filter: blur(10px);
-  animation: smoke 2s infinite;
-}
-
-@keyframes smoke {
-  0% { transform: translateY(0); opacity: 0.3; }
-  100% { transform: translateY(-60px); opacity: 0; }
-}
-
-.style-wrapper {
-  display: flex;
+.unique-grid,
+.collection-grid,
+.reviews-grid,
+.contact-grid {
+  display: grid;
   gap: 20px;
-  align-items: center;
 }
 
+.unique-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.collection-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.reviews-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.car-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.car-card img {
+  width: 100%;
+}
+
+.car-info {
+  padding: 15px;
+}
+
+.style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.style-controls {
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.style-controls label {
+  display: block;
+  margin: 15px 0 5px;
+}
+
+.style-controls select,
+.style-controls input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+}
+
+/* CAR PREVIEW */
 .car-preview {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .car-preview img {
   width: 100%;
+  display: block;
+}
+
+.wheel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.car {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 .color-overlay {
   position: absolute;
   inset: 0;
-  background: #ff0000;
+  z-index: 3;
   mix-blend-mode: multiply;
-  opacity: 0.6;
+  opacity: 0.7;
   pointer-events: none;
 }
 
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* REVIEWS */
+.review-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 15px;
 }
 
-.reviews {
-  display: flex;
-  gap: 20px;
-}
-
-.review {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.review img {
+.review-card img {
   width: 100%;
-  max-height: 200px;
-  object-fit: cover;
+  border-radius: 12px;
 }
 
-/* Адаптация под телефон */
-@media (max-width: 768px) {
-  .hero-grid, .style-wrapper {
-    flex-direction: column;
+/* CONTACT */
+.contact-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
   }
-  .unique-grid {
-    grid-template-columns: 1fr 1fr;
+  .burger {
+    display: flex;
   }
-  .cards {
+  .hero-grid {
     grid-template-columns: 1fr;
   }
-  nav {
-    display: none;
+  .spec-grid,
+  .unique-grid,
+  .collection-grid,
+  .reviews-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .style-grid {
+    grid-template-columns: 1fr;
   }
 }
