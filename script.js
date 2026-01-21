@@ -1,39 +1,27 @@
 const modelSelect = document.getElementById("model");
 const wheelSelect = document.getElementById("wheel");
-const carImage = document.getElementById("carImage");
-const wheelImage = document.getElementById("wheelImage");
+const carColor = document.getElementById("carColor");
+const carMask = document.getElementById("carMask");
 const colorPicker = document.getElementById("colorPicker");
 const colorOverlay = document.getElementById("colorOverlay");
 
+// обновление картинки
 function updateCar() {
   const model = modelSelect.value;
   const wheel = wheelSelect.value;
 
-  // корпус (ч/б)
-  carImage.src = ${model}.png;
-
-  // диски
-  wheelImage.src = ${model}_w${wheel}.png;
+  carColor.src = ${model}_w${wheel}.png;
+  carMask.src = ${model}.png;
 }
 
+// события
 modelSelect.addEventListener("change", updateCar);
 wheelSelect.addEventListener("change", updateCar);
 
+// цвет
 colorPicker.addEventListener("input", () => {
-  colorOverlay.style.backgroundColor = colorPicker.value;
+  colorOverlay.style.background = colorPicker.value;
 });
 
-window.addEventListener("load", () => {
-  const saved = localStorage.getItem("epopeyaStyle");
-  if (saved) {
-    const style = JSON.parse(saved);
-    modelSelect.value = style.model;
-    wheelSelect.value = style.wheel;
-    colorPicker.value = style.color;
-    updateCar();
-    colorOverlay.style.background = style.color;
-  }
-});
-
-
-
+// старт
+window.addEventListener("load", updateCar);
