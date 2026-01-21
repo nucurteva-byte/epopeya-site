@@ -195,50 +195,38 @@ body {
   margin: auto;
 }
 
-/* Цветная машина (фон) */
-.car-color {
+.car-canvas {
+  position: relative;
   width: 100%;
-  display: block;
+  height: auto;
+}
+
+.car-canvas img,
+.car-canvas .color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.car-color {
   z-index: 1;
 }
 
-/* Кузов (ч/б) */
 .car-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 2;
-  pointer-events: none;
 }
 
-/* Фильтр */
 .color-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 3;
-  pointer-events: none;
-
-  /* ВАЖНО: окрашивает только кузов */
-  background: red;
   mix-blend-mode: multiply;
   opacity: 0.7;
-
-  /* 🔥 Маска по кузову */
-  -webkit-mask-image: url("anapovskiy_mazut.png");
-  -webkit-mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-
-  mask-image: url("anapovskiy_mazut.png");
-  mask-size: cover;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  pointer-events: none;
 }
+
+/* controls */
 .style-controls {
   background: rgba(255,255,255,0.06);
   padding: 20px;
@@ -275,13 +263,13 @@ body {
   width: 100%;
   border-radius: 12px;
 }
+
 /* ===================== CONTACT ===================== */
 .contact-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
   padding: 20px;
 }
-
 /* ===================== MODAL ===================== */
 .modal {
   display: none;
@@ -331,5 +319,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-
