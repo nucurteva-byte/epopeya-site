@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЭПОПЕЯ — СВО</title>
+<title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,123 +19,193 @@
       <a href="#reviews">Отзывы</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfbQetzN7Q9iTNP_1kSLPTCkOw82mdxzgcBCYHa6gpnsdiPSQ/viewform" target="_blank">Записаться</a>
+    <button class="btn" id="testDriveBtn">Записаться</button>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </header>
 
-<section id="hero" class="hero">
-  <div class="hero-grid">
-    <div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero">Главная</a>
+  <a href="#specs">Характеристики</a>
+  <a href="#unique">Уникальность</a>
+  <a href="#collection">Коллекция</a>
+  <a href="#style">Создай стиль</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#contact">Контакты</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" class="hero luxury-section">
+  <div class="container hero-grid">
+    <div class="hero-text">
       <h1>ЭПОПЕЯ</h1>
-      <p>Самый мощный автомобиль. V10 · 2228 л.с. · 0–100 за 1,2 сек</p>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfbQetzN7Q9iTNP_1kSLPTCkOw82mdxzgcBCYHa6gpnsdiPSQ/viewform" target="_blank">Тест-драйв</a>
+      <p class="subtitle">Самый мощный автомобиль. Двигатель V10 — 2228 л.с. Разгон 0–100 за 1,2 секунды.</p>
+      <div class="hero-buttons">
+        <button class="btn" id="testDriveBtn2">Тест-драйв</button>
+        <button class="btn ghost" id="contactBtn">Связаться</button>
+      </div>
     </div>
-    <img id="heroCar" src="anapovskiy_mazut_w1.png" class="hero-img" alt="Анапский мазут">
+    <div class="hero-image">
+      <img src="anapovskiy_mazut.png" alt="Анапский мазут">
+    </div>
   </div>
 </section>
 
-<section id="unique" class="section dark">
-  <h2>Уникальность</h2>
-  <div class="unique-grid">
-    <div class="unique-card"><h3>2228 л.с.</h3><p>Абсолютный рекорд мощности</p></div>
-    <div class="unique-card"><h3>Лимиты</h3><p>Каждая версия — коллекционная</p></div>
-    <div class="unique-card"><h3>Статус</h3><p>ЭПОПЕЯ не объясняет себя</p></div>
-    <div class="unique-card"><h3>Ручная сборка</h3><p>Под конкретного владельца</p></div>
+<!-- SPECS -->
+<section id="specs" class="luxury-section">
+  <div class="container">
+    <h2>Характеристики</h2>
+    <div class="spec-grid">
+      <div class="spec-card"><h3>Двигатель</h3><p>V10</p></div>
+      <div class="spec-card"><h3>Мощность</h3><p>2228 л.с.</p></div>
+      <div class="spec-card"><h3>Разгон</h3><p>0–100 за 1,2 секунды</p></div>
+      <div class="spec-card"><h3>Длина</h3><p>6 метров</p></div>
+      <div class="spec-card"><h3>Ширина</h3><p>3 метра</p></div>
+      <div class="spec-card"><h3>Класс</h3><p>Премиум. Дающий в рот BUGATTI</p></div>
+    </div>
   </div>
 </section>
 
-<section id="collection" class="section">
-  <h2>Коллекция</h2>
-  <div class="cards">
-
-    <div class="card">
-      <img src="anapovskiy_mazut_w4.png" alt="Анапский мазут">
-      <h3>Анапский мазут</h3>
-      <p>Цена 420 000$<br>Премиум-класс с золотыми дисками</p>
+<!-- UNIQUE -->
+<section id="unique" class="luxury-section">
+  <div class="container">
+    <h2>Уникальность</h2>
+    <div class="unique-grid">
+      <div class="unique-card">
+        <h3>Лимитированные модели</h3>
+        <p>Каждая модель — ограниченная серия. Никаких массовых копий. Только элита.</p>
+      </div>
+      <div class="unique-card">
+        <h3>Золотые диски</h3>
+        <p>Первая в мире модель с настоящими золотыми дисками (420000$).</p>
+      </div>
+      <div class="unique-card">
+        <h3>Технология покраски</h3>
+        <p>Система “Style-Builder”: меняй цвет в реальном времени и сохраняй свой стиль.</p>
+      </div>
     </div>
-
-    <div class="card">
-      <img src="zadumchivaya_sliva_w4.png" alt="Задумчивая слива">
-      <h3>Задумчивая слива</h3>
-      <p>Цена от 444 444$</p>
-    </div>
-
-    <div class="card">
-      <img src="hohloma_w4.png" alt="Хохломская роспись">
-      <h3>Хохломская роспись</h3>
-      <p>Лимитированная расцветка</p>
-    </div>
-
-    <div class="card">
-      <img src="gzhel_w4.png" alt="Гжель">
-      <h3>Гжель</h3>
-      <p>Цена по договоренности<br>Лимитированный заказ для Мамаевой Марии</p>
-    </div>
-
-    <div class="card ash">
-      <img src="ashkudishka_w4.png" alt="Ашкудишка Личи">
-      <div class="smoke"></div>
-      <h3>Ашкудишка Личи 300 тяг</h3>
-      <p>Цена 300 000$<br>Встроенный кальян вместо подстаканников</p>
-    </div>
-
-    <div class="card">
-      <img src="cocacola_zero_w4.png" alt="CocaCola Zero">
-      <h3>CocaCola Zero</h3>
-      <p>239 000$<br>«Хочешь есть — попей водички»</p>
-    </div>
-
-    <div class="card">
-      <img src="heroin_needle_w1.png" alt="Героиновая игла">
-      <h3>Героиновая игла</h3>
-      <p>670 000$<br>«Райское наслаждение»</p>
-    </div>
-
   </div>
 </section>
 
-<section id="style" class="section dark">
-  <h2>Создай стиль</h2>
+<!-- COLLECTION -->
+<section id="collection" class="luxury-section">
+  <div class="container">
+    <h2>Коллекция</h2>
+    <div class="collection-grid">
 
-  <div class="style-wrapper">
-    <div class="car-preview">
-      <img id="carImage" src="anapovskiy_mazut_w1.png" alt="Конфигуратор">
-      <div id="colorOverlay" class="color-overlay"></div>
+      <!-- 1 -->
+      <div class="car-card">
+        <img src="anapovskiy_mazut_w4.png" alt="Анапский мазут">
+        <div class="car-info">
+          <h3>Анапский мазут</h3>
+          <p>Цена: 420000$ (с золотыми дисками)</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="car-card">
+        <img src="zadumchivaya_sliva_w4.png" alt="Задумчивая слива">
+        <div class="car-info">
+          <h3>Задумчивая слива</h3>
+          <p>Цена начинается: 444444$</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="car-card">
+        <img src="hohloma_w4.png" alt="Хохломская роспись">
+        <div class="car-info">
+          <h3>Хохломская роспись</h3>
+          <p>Цена: 22228$</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="car-card">
+        <img src="gzhel_w4.png" alt="Гжель">
+        <div class="car-info">
+          <h3>Гжель</h3>
+          <p>Цена по договоренности<br>Первый лимитированный заказ для Мамаевой Марии.</p>
     </div>
 
-    <div class="controls">
-      <label>Выбери модель:
+<!-- 5 -->
+      <div class="car-card">
+        <img src="ashkudishka_w4.png" alt="Ашкудишка Личи 300 тяг">
+        <div class="car-info">
+          <h3>Ашкудишка Личи 300 тяг</h3>
+          <p>Цена: 300000$<br>Шедевр инженерии со встроенным кальяном.</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="car-card">
+        <img src="cocacola_zero_w4.png" alt="CocaCola zero">
+        <div class="car-info">
+          <h3>CocaCola zero</h3>
+          <p>Лимитированная коллекция для наших РППшниц.<br>"Хочешь есть - попей водички."<br>Цена: 239000$</p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="car-card">
+        <img src="heroin_needle_w1.png" alt="Героиновая игла">
+        <div class="car-info">
+          <h3>Героиновая игла</h3>
+          <p>Лимитированная коллекция под заказ.<br>"Райское наслаждение"<br>Цена: 670000$</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STYLE BUILDER -->
+<section id="style" class="luxury-section">
+  <div class="container">
+    <h2>Создай уникальный стиль</h2>
+
+    <div class="style-grid">
+      <div class="style-controls">
+        <label>Модель:</label>
         <select id="model">
           <option value="anapovskiy_mazut">Анапский мазут</option>
           <option value="zadumchivaya_sliva">Задумчивая слива</option>
           <option value="hohloma">Хохломская роспись</option>
           <option value="gzhel">Гжель</option>
           <option value="ashkudishka">Ашкудишка</option>
-          <option value="cocacola_zero">CocaCola Zero</option>
-          <!-- Героиновая игла НЕ в конфигураторе -->
+          <option value="cocacola_zero">CocaCola zero</option>
+          <option value="heroin_needle">Героиновая игла</option>
         </select>
-      </label>
 
-      <label>Выбери диски:
-        <select id="wheels">
+        <label>Диски:</label>
+        <select id="wheel">
           <option value="w1">Классика</option>
           <option value="w2">Спорт</option>
           <option value="w3">Золото</option>
           <option value="w4">Классика</option>
         </select>
-      </label>
 
-      <label>Выбери цвет:
+        <label>Цвет:</label>
         <input type="color" id="colorPicker" value="#ff0000">
-      </label>
 
-      <button id="saveStyle">Сохранить стиль</button>
+        <button class="btn" id="saveStyleBtn">Сохранить стиль</button>
+      </div>
+
+      <div class="style-preview">
+        <div class="car-preview">
+          <img id="wheelImage" class="wheel" src="anapovskiy_mazut_w1.png" alt="Диски">
+          <img id="carImage" class="car" src="anapovskiy_mazut.png" alt="Корпус">
+          <div id="colorOverlay" class="color-overlay"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="reviews" class="section">
-  <h2>Отзывы</h2>
+<!-- REVIEWS -->
+<section id="reviews" class="luxury-section">
+  <div class="container">
+    <h2>Отзывы</h2>
   <div class="reviews">
 <div class="review">
         <img src="review1.png" alt="Отзыв 1">
@@ -148,12 +218,41 @@
         <p>⭐️⭐️⭐️⭐️⭐️<br>Купила, продала квартиру, но оно того стоило</p>
         <strong>Ира, Минск</strong>
       </div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="section dark">
-  <h2>Контакты</h2>
-  <p>Телефон: +79991219300</p>
-  <p>Адрес: г. Нижний Новгород, ул. Зайцева, 27</p>
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfbQetzN7Q9iTNP_1kSLPTCkOw82mdxzgcBCYHa6gpnsdiPSQ/viewform" target="_blank">Связаться</a>
+<!-- CONTACT -->
+<section id="contact" class="luxury-section">
+  <div class="container">
+    <h2>Контакты</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Телефон</h3>
+        <p>+7XXXXXXXXXX</p>
+      </div>
+      <div class="contact-card">
+        <h3>Адрес</h3>
+        <p>г.Нижний Новгород, ул.Зайцева, 27</p>
+      </div>
+      <div class="contact-card">
+        <h3>Форма связи</h3>
+        <p>Нажмите “Связаться” — откроется форма.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="modalClose">&times;</span>
+    <h3>Оставьте заявку</h3>
+    <p>Заполните форму, и мы свяжемся с вами.</p>
+    <button class="btn" id="openFormBtn">Открыть форму</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
