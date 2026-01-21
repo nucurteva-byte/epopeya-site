@@ -1,5 +1,3 @@
-// ======= STYLE BUILDER =======
-
 const modelSelect = document.getElementById("model");
 const wheelSelect = document.getElementById("wheel");
 const carImage = document.getElementById("carImage");
@@ -22,7 +20,6 @@ colorPicker.addEventListener("input", () => {
   colorOverlay.style.background = colorPicker.value;
 });
 
-// Load saved style
 window.addEventListener("load", () => {
   const saved = localStorage.getItem("epopeyaStyle");
   if (saved) {
