@@ -157,19 +157,16 @@
     <div class="style-builder">
 
       <div class="style-preview">
-        <div class="car-canvas">
+<div class="car-canvas">
+  <!-- Цветная картинка (фон) -->
+  <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png">
 
-          <!-- 1) цветная картинка (с дисками) -->
-          <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png" alt="Машина">
-
-          <!-- 2) ч/б кузов -->
-          <img id="carMask" class="car-mask" src="anapovskiy_mazut.png" alt="Кузов">
-
-          <!-- 3) фильтр -->
-          <div id="colorOverlay" class="color-overlay"></div>
-
-        </div>
-      </div>
+  <!-- Кузов + фильтр -->
+  <div class="car-mask-wrap">
+    <img id="carMask" class="car-mask" src="anapovskiy_mazut.png">
+    <div id="colorOverlay" class="color-overlay"></div>
+  </div>
+</div>
 
       <div class="style-controls">
         <label>
@@ -250,6 +247,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
