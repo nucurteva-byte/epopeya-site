@@ -1,320 +1,90 @@
-/* ===================== GLOBAL ===================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+// ===================== MOBILE MENU =====================
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+  mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+});
+
+// ===================== MODAL (Google Forms) =====================
+const modal = document.getElementById("modal");
+const modalClose = document.getElementById("modalClose");
+const openFormBtn = document.getElementById("openFormBtn");
+
+const testDriveBtn = document.getElementById("testDriveBtn");
+const testDriveBtn2 = document.getElementById("testDriveBtn2");
+const contactBtn = document.getElementById("contactBtn");
+
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/ТВОЯ_ССЫЛКА/viewform?embedded=true";
+
+// открытие модального окна
+function openModal() {
+  modal.style.display = "flex";
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #070707;
-  color: #fff;
+// закрытие модального окна
+modalClose.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// закрытие при клике вне окна
+window.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+// открыть форму из модального окна
+openFormBtn.addEventListener("click", () => {
+  window.open(GOOGLE_FORM_URL, "_blank");
+});
+
+// кнопки на сайте
+testDriveBtn.addEventListener("click", openModal);
+testDriveBtn2.addEventListener("click", openModal);
+contactBtn.addEventListener("click", openModal);
+
+
+// ===================== STYLE BUILDER =====================
+const modelSelect = document.getElementById("model");
+const wheelSelect = document.getElementById("wheel");
+const carColor = document.getElementById("carColor");
+const carMask = document.getElementById("carMask");
+const colorPicker = document.getElementById("colorPicker");
+const colorOverlay = document.getElementById("colorOverlay");
+
+function updateCar() {
+  const model = modelSelect.value;
+  const wheel = wheelSelect.value;
+
+  carColor.src = ${model}_w${wheel}.png;
+  carMask.src = ${model}.png;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+modelSelect.addEventListener("change", updateCar);
+wheelSelect.addEventListener("change", updateCar);
 
-/* ===================== HEADER ===================== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
-  padding: 15px 0;
-}
+colorPicker.addEventListener("input", () => {
+  colorOverlay.style.background = colorPicker.value;
+});
 
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.btn {
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
-  background: #c9a02a;
-  color: #000;
-  font-weight: 700;
-  border-radius: 8px;
-}
-
-.btn.ghost {
-  background: transparent;
-  border: 1px solid #c9a02a;
-  color: #fff;
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.burger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-}
-
-/* ===================== MOBILE MENU ===================== */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.9);
-  padding: 20px;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1500;
-}
-
-.mobile-menu a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* ===================== HERO ===================== */
-.hero {
-  padding-top: 110px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 56px;
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  font-size: 18px;
-  margin: 20px 0;
-}
-
-.hero-image img {
-  width: 100%;
-}
-
-/* ===================== SECTIONS ===================== */
-.luxury-section {
-  padding: 60px 0;
-}
-
-.spec-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.spec-card {
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.unique-grid,
-.collection-grid,
-.reviews-grid,
-.contact-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.unique-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.collection-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.reviews-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.contact-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.car-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.car-card img {
-  width: 100%;
-}
-
-.car-info {
-  padding: 15px;
-}
-
-/* ===================== STYLE BUILDER ===================== */
-.style-builder {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
-.style-preview {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-}
-
-.car-canvas {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.car-canvas img,
-.car-canvas .color-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.car-color {
-  z-index: 1;
-}
-
-.car-mask {
-  z-index: 2;
-}
-
-.color-overlay {
-  z-index: 3;
-  mix-blend-mode: multiply;
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.style-controls {
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.style-controls label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-weight: 500;
-}
-
-.style-controls select,
-.style-controls input[type="color"] {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(0,0,0,0.3);
-  color: white;
-}
-
-/* ===================== REVIEWS ===================== */
-.review-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 15px;
-}
-
-.review-card img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* ===================== CONTACT ===================== */
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-}
-
-/* ===================== MODAL ===================== */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.modal-content {
-  background: #111;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 900px) {
-  .nav {
-    display: none;
+// Load saved style
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("epopeyaStyle");
+  if (saved) {
+    const style = JSON.parse(saved);
+    modelSelect.value = style.model;
+    wheelSelect.value = style.wheel;
+    colorPicker.value = style.color;
   }
-  .burger {
-    display: flex;
-  }
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-  .spec-grid,
-  .unique-grid,
-  .collection-grid,
-  .reviews-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .style-builder {
-    grid-template-columns: 1fr;
-  }
-}
+  updateCar();
+  colorOverlay.style.background = colorPicker.value;
+});
+
+// Save style
+window.addEventListener("beforeunload", () => {
+  const style = {
+    model: modelSelect.value,
+    wheel: wheelSelect.value,
+    color: colorPicker.value,
+  };
+  localStorage.setItem("epopeyaStyle", JSON.stringify(style));
+});
