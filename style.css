@@ -237,6 +237,7 @@ body {
   opacity: 0.7;
   pointer-events: none;
 }
+
 .style-controls {
   background: rgba(255,255,255,0.06);
   padding: 20px;
@@ -272,6 +273,12 @@ body {
 .review-card img {
   width: 100%;
   border-radius: 12px;
+}
+/* ===================== CONTACT ===================== */
+.contact-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 /* ===================== MODAL ===================== */
@@ -323,12 +330,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-/* ===================== CONTACT ===================== */
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-}
-
-
