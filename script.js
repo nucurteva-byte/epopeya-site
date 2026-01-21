@@ -9,8 +9,8 @@ function updateCar() {
   const model = modelSelect.value;
   const wheel = wheelSelect.value;
 
-  carImage.src = ${model}.png;
-  wheelImage.src = ${model}_w${wheel}.png;
+  carImage.src = `${model}.png`;
+  wheelImage.src = `${model}_w${wheel}.png`;
 }
 
 modelSelect.addEventListener("change", updateCar);
@@ -31,3 +31,4 @@ window.addEventListener("load", () => {
     colorOverlay.style.background = style.color;
   }
 });
+
