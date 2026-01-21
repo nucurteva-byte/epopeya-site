@@ -195,22 +195,14 @@ body {
   margin: auto;
 }
 
-.car-canvas {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* Цветная картинка (фон) */
+/* Цветная машина (фон) */
 .car-color {
   width: 100%;
   display: block;
-  position: relative;
   z-index: 1;
 }
 
-/* Обертка кузова */
+/* Блок кузова (маска) */
 .car-mask-wrap {
   position: absolute;
   top: 0;
@@ -220,13 +212,13 @@ body {
   z-index: 2;
 }
 
-/* Кузов (ч/б) */
+/* Кузов */
 .car-mask {
   width: 100%;
   display: block;
 }
 
-/* Фильтр только на кузов */
+/* Фильтр (только на кузов) */
 .color-overlay {
   position: absolute;
   top: 0;
@@ -330,3 +322,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
