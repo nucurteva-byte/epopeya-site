@@ -2,37 +2,33 @@
 
 const modelSelect = document.getElementById("model");
 const wheelSelect = document.getElementById("wheel");
-const wheelBlock = document.getElementById("wheelBlock");
+const colorPicker = document.getElementById("colorPicker");
 
 const carColor = document.getElementById("carColor");
 const carMask = document.getElementById("carMask");
-const colorPicker = document.getElementById("colorPicker");
 const colorOverlay = document.getElementById("colorOverlay");
-
-// модели без дисков
-const modelsWithoutWheels = ["heroin_needle"];
 
 function updateCar() {
   const model = modelSelect.value;
   const wheel = wheelSelect.value;
+  const color = colorPicker.value;
 
-  carColor.src = model + "_w" + wheel + ".png";
-  carMask.src = model + ".png";
+  carColor.src = ${model}_w${wheel}.png;
+  carMask.src = ${model}.png;
 
-  if (modelsWithoutWheels.includes(model)) {
-    wheelBlock.style.display = "none";
-  } else {
-    wheelBlock.style.display = "block";
-  }
+  // маска на фильтр тоже меняем
+  colorOverlay.style.webkitMaskImage = url("${model}.png");
+  colorOverlay.style.maskImage = url("${model}.png");
+
+  colorOverlay.style.background = color;
 }
 
+// события
 modelSelect.addEventListener("change", updateCar);
 wheelSelect.addEventListener("change", updateCar);
+colorPicker.addEventListener("input", updateCar);
 
-colorPicker.addEventListener("input", () => {
-  colorOverlay.style.background = colorPicker.value;
-});
-
+// загрузка сохраненного стиля
 window.addEventListener("load", () => {
   const saved = localStorage.getItem("epopeyaStyle");
   if (saved) {
@@ -42,7 +38,6 @@ window.addEventListener("load", () => {
     colorPicker.value = style.color;
   }
   updateCar();
-  colorOverlay.style.background = colorPicker.value;
 });
 
 window.addEventListener("beforeunload", () => {
@@ -53,3 +48,4 @@ window.addEventListener("beforeunload", () => {
   };
   localStorage.setItem("epopeyaStyle", JSON.stringify(style));
 });
+
