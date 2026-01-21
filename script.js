@@ -1,5 +1,3 @@
-// ===================== STYLE BUILDER =====================
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const modelSelect = document.getElementById("model");
@@ -20,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ч/Б кузов
     carMask.src = ${model}.png;
 
-    // Фильтр только на кузов (маска)
+    // Цвет кузова (фильтр только на кузов)
     colorOverlay.style.background = colorPicker.value;
     colorOverlay.style.maskImage = url(${model}.png);
     colorOverlay.style.webkitMaskImage = url(${model}.png);
@@ -32,15 +30,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCar();
 });
-
-window.addEventListener("beforeunload", () => {
-  const style = {
-    model: modelSelect.value,
-    wheel: wheelSelect.value,
-    color: colorPicker.value
-  };
-  localStorage.setItem("epopeyaStyle", JSON.stringify(style));
-});
-
-
-
