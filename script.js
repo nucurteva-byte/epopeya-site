@@ -1,37 +1,35 @@
 // ===================== STYLE BUILDER =====================
 
-const modelSelect = document.getElementById("model");
-const wheelSelect = document.getElementById("wheel");
-const colorPicker = document.getElementById("colorPicker");
+document.addEventListener("DOMContentLoaded", () => {
 
-const carColor = document.getElementById("carColor");
-const carMask = document.getElementById("carMask");
-const colorOverlay = document.getElementById("colorOverlay");
+  const modelSelect = document.getElementById("model");
+  const wheelSelect = document.getElementById("wheel");
+  const colorPicker = document.getElementById("colorPicker");
 
-function updateCar() {
-  const model = modelSelect.value;
-  const wheel = wheelSelect.value || "1";
-  const color = colorPicker.value;
+  const carColor = document.getElementById("carColor");
+  const carMask = document.getElementById("carMask");
+  const colorOverlay = document.getElementById("colorOverlay");
 
-  // 1) Цветная машина (фон)
-  carColor.src = ${model}_w${wheel}.png;
+  function updateCar() {
+    const model = modelSelect.value;
+    const wheel = wheelSelect.value;
 
-  // 2) Ч/Б кузов
-  carMask.src = ${model}.png;
+    // Цветная машина
+    carColor.src = ${model}_w${wheel}.png;
 
-  // 3) Маска фильтра (обязательно обновлять!)
-  colorOverlay.style.webkitMaskImage = url("${model}.png");
-  colorOverlay.style.maskImage = url("${model}.png");
+    // Ч/Б кузов
+    carMask.src = ${model}.png;
 
-  // 4) Цвет кузова
-  colorOverlay.style.background = color;
-}
+    // Фильтр только на кузов (маска)
+    colorOverlay.style.background = colorPicker.value;
+    colorOverlay.style.maskImage = url(${model}.png);
+    colorOverlay.style.webkitMaskImage = url(${model}.png);
+  }
 
-modelSelect.addEventListener("change", updateCar);
-wheelSelect.addEventListener("change", updateCar);
-colorPicker.addEventListener("input", updateCar);
+  modelSelect.addEventListener("change", updateCar);
+  wheelSelect.addEventListener("change", updateCar);
+  colorPicker.addEventListener("input", updateCar);
 
-window.addEventListener("load", () => {
   updateCar();
 });
 
@@ -43,5 +41,6 @@ window.addEventListener("beforeunload", () => {
   };
   localStorage.setItem("epopeyaStyle", JSON.stringify(style));
 });
+
 
 
