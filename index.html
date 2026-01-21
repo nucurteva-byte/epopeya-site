@@ -156,23 +156,21 @@
 
     <div class="style-builder">
 
-      <!-- ПРЕВЬЮ АВТО -->
       <div class="style-preview">
+        <div class="car-canvas">
 
-        <!-- Цветная машина (нижний слой) -->
-        <img id="carColor" class="carColor" src="anapovskiy_mazut_w1.png" alt="Цветная машина">
+          <!-- 1) цветная картинка (с дисками) -->
+          <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png" alt="Цветная машина">
 
-        <!-- Ч/Б кузов (сверху) -->
-        <img id="carImage" class="carBody" src="anapovskiy_mazut.png" alt="Ч/Б кузов">
+          <!-- 2) ч/б кузов -->
+          <img id="carMask" class="car-mask" src="anapovskiy_mazut.png" alt="ЧБ кузов">
 
-        <!-- Цветовой слой -->
-        <div id="colorOverlay" class="color-overlay"></div>
+          <!-- 3) фильтр -->
+          <div id="colorOverlay" class="color-overlay"></div>
 
-        <!-- Диски (поверх кузова) -->
-        <img id="wheelImage" class="wheel" src="anapovskiy_mazut_w1.png" alt="Диски">
+        </div>
       </div>
 
-      <!-- УПРАВЛЕНИЕ -->
       <div class="style-controls">
         <label>
           Модель
@@ -251,6 +249,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
