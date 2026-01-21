@@ -29,18 +29,63 @@ testDriveBtn?.addEventListener("click", openModal);
 testDriveBtn2?.addEventListener("click", openModal);
 contactBtn?.addEventListener("click", openModal);
 
-// ===================== STYLE BUILDER =====================
+// ======= STYLE BUILDER =======
+
 const modelSelect = document.getElementById("model");
 const wheelSelect = document.getElementById("wheel");
+const wheelBlock = document.getElementById("wheelBlock");
+
 const carColor = document.getElementById("carColor");
 const carMask = document.getElementById("carMask");
 const colorPicker = document.getElementById("colorPicker");
 const colorOverlay = document.getElementById("colorOverlay");
 
-if (!modelSelect  !wheelSelect  !carColor  !carMask  !colorPicker || !colorOverlay) {
-  console.error("ОШИБКА: один из элементов не найден. Проверь id в HTML!");
+// модели без дисков (например: "gzhel" или "ashkudishka")
+const modelsWithoutWheels = ["heroin_needle"];
+
+function updateCar() {
+  const model = modelSelect.value;
+  const wheel = wheelSelect.value;
+
+  carColor.src = ${model}_w${wheel}.png;
+  carMask.src = ${model}.png;
+
+  // если у модели нет дисков — скрываем выбор
+  if (modelsWithoutWheels.includes(model)) {
+    wheelBlock.style.display = "none";
+    wheelSelect.value = "1"; // чтобы не было ошибок
+  } else {
+    wheelBlock.style.display = "block";
+  }
 }
 
+modelSelect.addEventListener("change", updateCar);
+wheelSelect.addEventListener("change", updateCar);
+
+colorPicker.addEventListener("input", () => {
+  colorOverlay.style.background = colorPicker.value;
+});
+
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("epopeyaStyle");
+  if (saved) {
+    const style = JSON.parse(saved);
+    modelSelect.value = style.model;
+    wheelSelect.value = style.wheel;
+    colorPicker.value = style.color;
+  }
+  updateCar();
+  colorOverlay.style.background = colorPicker.value;
+});
+
+window.addEventListener("beforeunload", () => {
+  const style = {
+    model: modelSelect.value,
+    wheel: wheelSelect.value,
+    color: colorPicker.value,
+  };
+  localStorage.setItem("epopeyaStyle", JSON.stringify(style));
+});
 // DEBUG: выводим что найдено
 console.log("modelSelect:", modelSelect);
 console.log("wheelSelect:", wheelSelect);
@@ -89,3 +134,4 @@ window.addEventListener("beforeunload", () => {
   };
   localStorage.setItem("epopeyaStyle", JSON.stringify(style));
 });
+
