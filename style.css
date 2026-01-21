@@ -1,33 +1,22 @@
-/* =========================
-   RESET
-========================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
   font-family: Arial, sans-serif;
   background: #070707;
   color: #fff;
 }
 
-/* =========================
-   CONTAINER
-========================= */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 .header {
   position: fixed;
   top: 0;
@@ -109,9 +98,7 @@ body {
   text-decoration: none;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* HERO */
 .hero {
   padding-top: 110px;
 }
@@ -137,22 +124,29 @@ body {
   width: 100%;
 }
 
-/* COMMON SECTION STYLES */
+/* SECTIONS */
 .luxury-section {
   padding: 60px 0;
 }
 
-.spec-grid,
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.spec-card {
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 12px;
+}
+
 .unique-grid,
 .collection-grid,
 .reviews-grid,
 .contact-grid {
   display: grid;
   gap: 20px;
-}
-
-.spec-grid {
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .unique-grid {
@@ -185,14 +179,12 @@ body {
   padding: 15px;
 }
 
-/* =========================
-   STYLE BUILDER
-========================= */
+/* STYLE BUILDER */
 .style-builder {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  align-items: start;
+  align-items: center;
 }
 
 .style-preview {
@@ -230,18 +222,7 @@ body {
   z-index: 4;
 }
 
-.color-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  opacity: 0.8;
-}
-
+/* controls */
 .style-controls {
   background: rgba(255,255,255,0.06);
   padding: 20px;
@@ -267,9 +248,7 @@ body {
   color: white;
 }
 
-/* =========================
-   REVIEWS
-========================= */
+/* REVIEWS */
 .review-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
@@ -281,18 +260,14 @@ body {
   border-radius: 12px;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 .contact-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
   padding: 20px;
 }
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -319,13 +294,11 @@ body {
   font-size: 24px;
 }
 
-/* =========================
-   MEDIA
-========================= */
+/* MOBILE */
 @media (max-width: 900px) {
   .nav {
     display: none;
-  }
+     }
   .burger {
     display: flex;
   }
@@ -343,4 +316,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
