@@ -20,7 +20,7 @@ modelSelect.addEventListener("change", updateCar);
 wheelSelect.addEventListener("change", updateCar);
 
 colorPicker.addEventListener("input", () => {
-  colorOverlay.style.background = colorPicker.value;
+  colorOverlay.style.backgroundColor = colorPicker.value;
 });
 
 window.addEventListener("load", () => {
@@ -34,5 +34,6 @@ window.addEventListener("load", () => {
     colorOverlay.style.background = style.color;
   }
 });
+
 
 
