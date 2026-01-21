@@ -1,97 +1,185 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* === Общие стили === */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #0b0b0b;
   color: #fff;
 }
 
-.container { max-width: 1200px; margin: auto; padding: 20px; }
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
 
 .header {
+  background: rgba(0,0,0,0.6);
   position: sticky;
   top: 0;
-  background: #000;
   z-index: 10;
 }
 
-.header-flex {
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #ff0000;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section.dark {
+  background: #111;
+}
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav a {
-  margin: 0 10px;
-  color: #fff;
-  text-decoration: none;
+.hero-img {
+  width: 50%;
+  max-width: 500px;
 }
 
-.btn {
-  padding: 10px 20px;
-  background: gold;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.hero {
-  padding: 60px 0;
-}
-
-.hero-grid {
+.unique-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.hero img {
-  width: 100%;
-  border-radius: 12px;
+.unique-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.section { padding: 60px 0; }
-.dark { background: #111; }
-
-.grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.card, .review {
-  background: #1a1a1a;
+.card {
+  background: rgba(255,255,255,0.08);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.card img, .review img {
+.card img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  max-height: 200px;
+  object-fit: cover;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-}
-
-.modal.open { display: flex; }
-
-.modal-box {
-  background: #fff;
-  color: #000;
-  margin: auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 600px;
+.ash {
   position: relative;
 }
 
-#closeModal {
+.smoke {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
+  top: -10px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,0.1);
+  filter: blur(10px);
+  animation: smoke 2s infinite;
+}
+
+@keyframes smoke {
+  0% { transform: translateY(0); opacity: 0.3; }
+  100% { transform: translateY(-60px); opacity: 0; }
+}
+
+.style-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.car-preview {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.car-preview img {
+  width: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  inset: 0;
+  background: #ff0000;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reviews {
+  display: flex;
+  gap: 20px;
+}
+
+.review {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.review img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* Адаптация под телефон */
+@media (max-width: 768px) {
+  .hero-grid, .style-wrapper {
+    flex-direction: column;
+  }
+  .unique-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: none;
+  }
 }
