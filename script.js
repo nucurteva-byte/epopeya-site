@@ -1,4 +1,5 @@
 // ===================== STYLE BUILDER =====================
+
 const modelSelect = document.getElementById("model");
 const wheelSelect = document.getElementById("wheel");
 const wheelBlock = document.getElementById("wheelBlock");
@@ -8,8 +9,8 @@ const carMask = document.getElementById("carMask");
 const colorPicker = document.getElementById("colorPicker");
 const colorOverlay = document.getElementById("colorOverlay");
 
-// если у модели нет дисков — добавь её сюда
-const modelsWithoutWheels = ["anapovskiy_mazut"];
+// модели без дисков
+const modelsWithoutWheels = ["heroin_needle"];
 
 function updateCar() {
   const model = modelSelect.value;
@@ -48,7 +49,7 @@ window.addEventListener("beforeunload", () => {
   const style = {
     model: modelSelect.value,
     wheel: wheelSelect.value,
-    color: colorPicker.value,
+    color: colorPicker.value
   };
   localStorage.setItem("epopeyaStyle", JSON.stringify(style));
 });
