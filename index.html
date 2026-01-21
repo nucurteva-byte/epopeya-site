@@ -9,10 +9,11 @@
 <body>
 
 <header class="header">
-  <div class="header-row">
+  <div class="container header-inner">
     <div class="logo">СВО</div>
-    <nav>
+    <nav class="nav">
       <a href="#hero">Главная</a>
+      <a href="#specs">Характеристики</a>
       <a href="#unique">Уникальность</a>
       <a href="#collection">Коллекция</a>
       <a href="#style">Создай стиль</a>
@@ -34,7 +35,6 @@
   <a href="#contact">Контакты</a>
 </div>
 
-<!-- HERO -->
 <section id="hero" class="hero luxury-section">
   <div class="container hero-grid">
     <div class="hero-text">
@@ -51,7 +51,6 @@
   </div>
 </section>
 
-<!-- SPECS -->
 <section id="specs" class="luxury-section">
   <div class="container">
     <h2>Характеристики</h2>
@@ -66,7 +65,6 @@
   </div>
 </section>
 
-<!-- UNIQUE -->
 <section id="unique" class="luxury-section">
   <div class="container">
     <h2>Уникальность</h2>
@@ -87,68 +85,61 @@
   </div>
 </section>
 
-<!-- COLLECTION -->
 <section id="collection" class="luxury-section">
   <div class="container">
     <h2>Коллекция</h2>
     <div class="collection-grid">
 
-      <!-- 1 -->
       <div class="car-card">
-        <img src="anapovskiy_mazut_w4.png" alt="Анапский мазут">
+        <img src="anapovskiy_mazut.png" alt="Анапский мазут">
         <div class="car-info">
           <h3>Анапский мазут</h3>
           <p>Цена: 420000$ (с золотыми дисками)</p>
         </div>
       </div>
 
-      <!-- 2 -->
       <div class="car-card">
-        <img src="zadumchivaya_sliva_w4.png" alt="Задумчивая слива">
+        <img src="zadumchivaya_sliva.png" alt="Задумчивая слива">
         <div class="car-info">
           <h3>Задумчивая слива</h3>
           <p>Цена начинается: 444444$</p>
         </div>
       </div>
 
-      <!-- 3 -->
       <div class="car-card">
-        <img src="hohloma_w4.png" alt="Хохломская роспись">
+        <img src="hohloma.png" alt="Хохломская роспись">
         <div class="car-info">
           <h3>Хохломская роспись</h3>
           <p>Цена: 22228$</p>
         </div>
       </div>
 
-      <!-- 4 -->
       <div class="car-card">
-        <img src="gzhel_w4.png" alt="Гжель">
+        <img src="gzhel.png" alt="Гжель">
         <div class="car-info">
           <h3>Гжель</h3>
           <p>Цена по договоренности<br>Первый лимитированный заказ для Мамаевой Марии.</p>
-    </div>
+        </div>
+      </div>
 
-<!-- 5 -->
       <div class="car-card">
-        <img src="ashkudishka_w4.png" alt="Ашкудишка Личи 300 тяг">
+        <img src="ashkudishka.png" alt="Ашкудишка Личи 300 тяг">
         <div class="car-info">
           <h3>Ашкудишка Личи 300 тяг</h3>
           <p>Цена: 300000$<br>Шедевр инженерии со встроенным кальяном.</p>
         </div>
       </div>
 
-      <!-- 6 -->
       <div class="car-card">
-        <img src="cocacola_zero_w4.png" alt="CocaCola zero">
+        <img src="cocacola_zero.png" alt="CocaCola zero">
         <div class="car-info">
           <h3>CocaCola zero</h3>
           <p>Лимитированная коллекция для наших РППшниц.<br>"Хочешь есть - попей водички."<br>Цена: 239000$</p>
         </div>
       </div>
 
-      <!-- 7 -->
       <div class="car-card">
-        <img src="heroin_needle_w1.png" alt="Героиновая игла">
+        <img src="heroin_needle.png" alt="Героиновая игла">
         <div class="car-info">
           <h3>Героиновая игла</h3>
           <p>Лимитированная коллекция под заказ.<br>"Райское наслаждение"<br>Цена: 670000$</p>
@@ -159,7 +150,6 @@
   </div>
 </section>
 
-<!-- STYLE BUILDER -->
 <section id="style" class="luxury-section">
   <div class="container">
     <h2>Создай уникальный стиль</h2>
@@ -179,10 +169,10 @@
 
         <label>Диски:</label>
         <select id="wheel">
-          <option value="w1">Классика</option>
-          <option value="w2">Спорт</option>
-          <option value="w3">Золото</option>
-          <option value="w4">Классика</option>
+          <option value="1">Диски 1</option>
+          <option value="2">Диски 2</option>
+          <option value="3">Диски 3</option>
+          <option value="4">Диски 4</option>
         </select>
 
         <label>Цвет:</label>
@@ -202,38 +192,33 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews" class="luxury-section">
   <div class="container">
     <h2>Отзывы</h2>
-  <div class="reviews">
-<div class="review">
+    <div class="reviews-grid">
+      <div class="review-card">
         <img src="review1.png" alt="Отзыв 1">
-        <p>⭐️⭐️⭐️⭐️⭐️<br>После Эпопеи - Bugatti перестал заводиться. Bugatti больше не впечатляет</p>
-        <strong>Мэри, Нижний Новгород</strong>
+        <p>"ЭПОПЕЯ — это космос. Мощь, стиль и уникальность. Никогда не видел ничего подобного."</p>
       </div>
-
-      <div class="review">
+      <div class="review-card">
         <img src="review2.png" alt="Отзыв 2">
-        <p>⭐️⭐️⭐️⭐️⭐️<br>Купила, продала квартиру, но оно того стоило</p>
-        <strong>Ира, Минск</strong>
+        <p>"Лучший автомобиль, который я когда-либо видел. Это не машина — это статус."</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="luxury-section">
   <div class="container">
     <h2>Контакты</h2>
     <div class="contact-grid">
       <div class="contact-card">
         <h3>Телефон</h3>
-        <p>+7XXXXXXXXXX</p>
+        <p>+7#######</p>
       </div>
       <div class="contact-card">
         <h3>Адрес</h3>
-        <p>г.Нижний Новгород, ул.Зайцева, 27</p>
+        <p>######</p>
       </div>
       <div class="contact-card">
         <h3>Форма связи</h3>
@@ -243,7 +228,6 @@
   </div>
 </section>
 
-<!-- MODAL -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close" id="modalClose">&times;</span>
