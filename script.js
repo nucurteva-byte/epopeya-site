@@ -7,14 +7,6 @@ const wheelImage = document.getElementById("wheelImage");
 const colorPicker = document.getElementById("colorPicker");
 const colorOverlay = document.getElementById("colorOverlay");
 
-// Проверка, что элементы найдены
-console.log("modelSelect:", modelSelect);
-console.log("wheelSelect:", wheelSelect);
-console.log("carImage:", carImage);
-console.log("wheelImage:", wheelImage);
-console.log("colorPicker:", colorPicker);
-console.log("colorOverlay:", colorOverlay);
-
 function updateCar() {
   const model = modelSelect.value;
   const wheel = wheelSelect.value;
