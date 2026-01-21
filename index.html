@@ -100,6 +100,7 @@
   <div class="style-wrapper">
     <div class="car-preview">
       <img id="carImage" src="anapovskiy_mazut_w1.png" alt="Конфигуратор">
+      <div id="colorOverlay" class="color-overlay"></div>
     </div>
 
     <div class="controls">
@@ -117,16 +118,21 @@
 
       <label>Выбери диски:
         <select id="wheels">
-          <option value="w1">Кованная роскошь</option>
-          <option value="w2">Германия</option>
-          <option value="w3">болгартти</option>
+          <option value="w1">Классика</option>
+          <option value="w2">Спорт</option>
+          <option value="w3">Золото</option>
           <option value="w4">Классика</option>
         </select>
       </label>
 
+      <label>Выбери цвет:
+        <input type="color" id="colorPicker" value="#ff0000">
+      </label>
+
       <button id="saveStyle">Сохранить стиль</button>
     </div>
-  </div></section>
+  </div>
+</section>
 
 <section id="reviews" class="section">
   <h2>Отзывы</h2>
@@ -155,3 +161,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
