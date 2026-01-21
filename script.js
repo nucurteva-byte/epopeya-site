@@ -1,33 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
+const modelSelect = document.getElementById("model");
+const wheelSelect = document.getElementById("wheel");
+const colorPicker = document.getElementById("colorPicker");
 
-  const modelSelect = document.getElementById("model");
-  const wheelSelect = document.getElementById("wheel");
-  const colorPicker = document.getElementById("colorPicker");
+const carColor = document.getElementById("carColor");
+const carMask = document.getElementById("carMask");
+const colorOverlay = document.getElementById("colorOverlay");
 
-  const carColor = document.getElementById("carColor");
-  const carMask = document.getElementById("carMask");
-  const colorOverlay = document.getElementById("colorOverlay");
+function updateCar() {
+  const model = modelSelect.value;
+  const wheel = wheelSelect.value;
 
-  function updateCar() {
-    const model = modelSelect.value;
-    const wheel = wheelSelect.value;
+  carColor.src = `${model}_w${wheel}.png`;
+  carMask.src = `${model}.png`;
+}
 
-    // Цветная машина
-    carColor.src = `${model}_w${wheel}.png`;
+function updateColor() {
+  colorOverlay.style.background = colorPicker.value;
+}
 
-    // Ч/Б кузов
-    carMask.src = `${model}.png`;
+modelSelect.addEventListener("change", updateCar);
+wheelSelect.addEventListener("change", updateCar);
+colorPicker.addEventListener("input", updateColor);
 
-    // Цвет кузова (фильтр только на кузов)
-    colorOverlay.style.background = colorPicker.value;
-    colorOverlay.style.maskImage = url(${model}.png);
-    colorOverlay.style.webkitMaskImage = url(${model}.png);
-  }
-
-  modelSelect.addEventListener("change", updateCar);
-  wheelSelect.addEventListener("change", updateCar);
-  colorPicker.addEventListener("input", updateCar);
-
+window.addEventListener("load", () => {
   updateCar();
+  updateColor();
 });
-
