@@ -152,40 +152,36 @@
 
 <section id="style" class="luxury-section">
   <div class="container">
-    <h2>Создай уникальный стиль</h2>
+    <h2>Создай стиль</h2>
 
-    <div class="style-grid">
-      <div class="style-controls">
-        <label>Модель:</label>
-        <select id="model">
-          <option value="anapovskiy_mazut">Анапский мазут</option>
-          <option value="zadumchivaya_sliva">Задумчивая слива</option>
-          <option value="hohloma">Хохломская роспись</option>
-          <option value="gzhel">Гжель</option>
-          <option value="ashkudishka">Ашкудишка</option>
-          <option value="cocacola_zero">CocaCola zero</option>
-          <option value="heroin_needle">Героиновая игла</option>
-        </select>
-
-        <label>Диски:</label>
-        <select id="wheel">
-          <option value="1">Диски 1</option>
-          <option value="2">Диски 2</option>
-          <option value="3">Диски 3</option>
-        </select>
-
-        <label>Цвет:</label>
-        <input type="color" id="colorPicker" value="#ff0000">
-
-        <button class="btn" id="saveStyleBtn">Сохранить стиль</button>
+    <div class="style-builder">
+      <div class="style-preview">
+        <img id="carImage" src="anapovskiy_mazut.png" alt="машина" class="car">
+        <img id="wheelImage" src="anapovskiy_mazut_w1.png" alt="диски" class="wheel">
+        <div id="colorOverlay" class="color-overlay"></div>
       </div>
 
-      <div class="style-preview">
-        <div class="car-preview">
-          <img id="wheelImage" class="wheel" src="anapovskiy_mazut_w1.png" alt="Диски">
-          <img id="carImage" class="car" src="anapovskiy_mazut.png" alt="Корпус">
-          <div id="colorOverlay" class="color-overlay"></div>
-        </div>
+      <div class="style-controls">
+        <label>Модель:
+          <select id="model">
+            <option value="anapovskiy_mazut">Анапский мазут</option>
+            <option value="zadumchivaya_sliva">Задумчивая слива</option>
+            <option value="gzhel">Гжель</option>
+            <option value="ashkudishka">Ашкудишка личи</option>
+          </select>
+        </label>
+
+        <label>Диски:
+          <select id="wheel">
+            <option value="1">Диски 1</option>
+            <option value="2">Диски 2</option>
+            <option value="3">Диски 3</option>
+          </select>
+        </label>
+
+        <label>Цвет:
+          <input type="color" id="colorPicker" value="#ff0000">
+        </label>
       </div>
     </div>
   </div>
@@ -239,6 +235,7 @@
 <script src="script.js?v=2"></script>
 </body>
 </html>
+
 
 
 
