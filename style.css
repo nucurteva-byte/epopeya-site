@@ -159,17 +159,17 @@ h2 {
 
 /* ДИСКИ */
 .wheel {
-  z-index: 3; /* диски сверху */
+  z-index: 4; /* диски сверху */
 }
 
 /* КОРПУС */
 .car {
-  z-index: 2; /* кузов ниже дисков */
+  z-index: 2; /* кузов ниже overlay */
 }
 
 /* ЦВЕТ */
 .color-overlay {
-  z-index: 1; /* цветовой слой под дисками */
+  z-index: 3; /* цветовой слой над кузовом */
   mix-blend-mode: multiply;
   opacity: 0.75;
   pointer-events: none;
