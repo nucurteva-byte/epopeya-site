@@ -10,33 +10,28 @@ const colorOverlay = document.getElementById("colorOverlay");
 
 function updateCar() {
   const model = modelSelect.value;
-  const wheel = wheelSelect.value;
+  const wheel = wheelSelect.value || "1";
   const color = colorPicker.value;
 
+  // 1) Цветная машина (фон)
   carColor.src = ${model}_w${wheel}.png;
+
+  // 2) Ч/Б кузов
   carMask.src = ${model}.png;
 
-  // маска на фильтр тоже меняем
+  // 3) Маска фильтра (обязательно обновлять!)
   colorOverlay.style.webkitMaskImage = url("${model}.png");
   colorOverlay.style.maskImage = url("${model}.png");
 
+  // 4) Цвет кузова
   colorOverlay.style.background = color;
 }
 
-// события
 modelSelect.addEventListener("change", updateCar);
 wheelSelect.addEventListener("change", updateCar);
 colorPicker.addEventListener("input", updateCar);
 
-// загрузка сохраненного стиля
 window.addEventListener("load", () => {
-  const saved = localStorage.getItem("epopeyaStyle");
-  if (saved) {
-    const style = JSON.parse(saved);
-    modelSelect.value = style.model;
-    wheelSelect.value = style.wheel;
-    colorPicker.value = style.color;
-  }
   updateCar();
 });
 
@@ -48,4 +43,5 @@ window.addEventListener("beforeunload", () => {
   };
   localStorage.setItem("epopeyaStyle", JSON.stringify(style));
 });
+
 
