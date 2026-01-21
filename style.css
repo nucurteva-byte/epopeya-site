@@ -5,7 +5,6 @@
   padding: 0;
 }
 
-/* ===== BASE ===== */
 body {
   font-family: Arial, sans-serif;
   background: #070707;
@@ -27,7 +26,12 @@ body {
   background: rgba(0,0,0,0.85);
   backdrop-filter: blur(8px);
   z-index: 1000;
-  padding: 15px 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -43,17 +47,15 @@ body {
 .nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .btn {
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
   background: #c9a02a;
-  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
   font-weight: 700;
-  border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn.ghost {
@@ -64,56 +66,41 @@ body {
 
 /* ===== SECTIONS ===== */
 .luxury-section {
-  padding: 80px 0;
-  position: relative;
+  padding: 100px 0;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 30px;
 }
 
 /* ===== HERO ===== */
 .hero {
-  padding-top: 120px;
+  padding-top: 140px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
 }
 
 .hero h1 {
-  font-size: 56px;
+  font-size: 60px;
 }
 
 .subtitle {
   margin: 20px 0;
-  font-size: 18px;
 }
 
-.hero-image img {
-  width: 100%;
-  display: block;
-}
-
-/* ===== GRIDS ===== */
-.spec-grid,
-.unique-grid,
+/* ===== CAR CARDS ===== */
 .collection-grid,
-.reviews-grid,
-.contact-grid {
+.reviews-grid {
   display: grid;
-  gap: 20px;
+  gap: 30px;
 }
 
-.spec-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.unique-grid,
 .collection-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -122,18 +109,15 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.contact-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* ===== CAR CARD ===== */
-.car-card {
+.car-card,
+.review-card {
   background: rgba(255,255,255,0.06);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
-.car-card img {
+.car-card img,
+.review-card img {
   width: 100%;
   display: block;
 }
@@ -143,10 +127,6 @@ h2 {
 }
 
 /* ===== STYLE BUILDER ===== */
-#style {
-  position: relative;
-  z-index: 1;
-}
 
 .style-builder {
   display: grid;
@@ -156,97 +136,87 @@ h2 {
 }
 
 .style-preview {
+  display: flex;
+  justify-content: center;
+}
+
+/* КАНВАС МАШИНЫ */
+.car-canvas {
   position: relative;
   width: 100%;
   max-width: 520px;
-  min-height: 300px;
-  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+/* ВСЕ СЛОИ */
+.car-canvas img,
+.car-canvas .color-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ДИСКИ */
+.wheel {
+  z-index: 1;
 }
 
 /* КОРПУС */
 .car {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ЦВЕТ */
 .color-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  z-index: 3;
   mix-blend-mode: multiply;
   opacity: 0.75;
   pointer-events: none;
 }
 
-/* ДИСКИ */
-.wheel {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  z-index: 3;
-}
-
-/* ===== STYLE CONTROLS ===== */
+/* УПРАВЛЕНИЕ */
 .style-controls {
   background: rgba(255,255,255,0.06);
   padding: 25px;
-  border-radius: 14px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .style-controls label {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-weight: 600;
+  gap: 6px;
 }
 
 .style-controls select,
-.style-controls input[type="color"] {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
+.style-controls input {
+  padding: 10px;
+  border-radius: 8px;
   background: #111;
   color: #fff;
-}
-
-/* ===== REVIEWS ===== */
-#reviews {
-  margin-top: 80px;
-}
-
-.review-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 15px;
-}
-
-.review-card img {
-  width: 100%;
-  border-radius: 10px;
+  border: 1px solid #333;
 }
 
 /* ===== CONTACT ===== */
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 20px;
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* ===== RESPONSIVE ===== */
+.contact-card {
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+/* ===== ADAPTIVE ===== */
 @media (max-width: 900px) {
   .hero-grid,
-  .style-builder {
-    grid-template-columns: 1fr;
-  }
-
-  .spec-grid,
-  .unique-grid,
+  .style-builder,
   .collection-grid,
   .reviews-grid,
   .contact-grid {
@@ -254,6 +224,6 @@ h2 {
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 }
