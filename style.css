@@ -307,3 +307,56 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ======= STYLE BUILDER ======= */
+.style-builder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.style-preview {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.style-preview img {
+  width: 100%;
+  display: block;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.style-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.style-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.style-controls select,
+.style-controls input[type="color"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
