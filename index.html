@@ -154,29 +154,18 @@
   <div class="container">
     <h2>Создай стиль</h2>
 
-    <div class="style-builder">
+<div class="style-preview">
 
-      <div class="style-preview">
+  <!-- 1) Цветная машина (фон) -->
+  <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png" alt="Цветная машина">
 
-  <!-- 1) Цветная картинка (фон) -->
-  <img
-    id="carColor"
-    class="car-color"
-    src="anapovskiy_mazut_w1.png"
-    alt="Цветная машина"
-  >
+  <!-- 2) Кузов (маска) -->
+  <img id="carMask" class="car-mask" src="anapovskiy_mazut.png" alt="Кузов">
 
-  <!-- 2) Кузов + фильтр -->
-  <div class="car-mask-wrap">
-    <img
-      id="carMask"
-      class="car-mask"
-      src="anapovskiy_mazut.png"
-      alt="Кузов ч/б"
-    >
-    <div id="colorOverlay" class="color-overlay"></div>
-  </div>
+  <!-- 3) Фильтр, который будет окрашивать только кузов -->
+  <div id="colorOverlay" class="color-overlay"></div>
 
+</div>
 </div>
 
       <div class="style-controls">
@@ -258,6 +247,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
