@@ -6,7 +6,7 @@ burger.addEventListener("click", () => {
   mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
 });
 
-// ===================== MODAL (Google Forms) =====================
+// ===================== MODAL =====================
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
 const openFormBtn = document.getElementById("openFormBtn");
@@ -17,31 +17,17 @@ const contactBtn = document.getElementById("contactBtn");
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/ТВОЯ_ССЫЛКА/viewform?embedded=true";
 
-// открытие модального окна
 function openModal() {
   modal.style.display = "flex";
 }
 
-// закрытие модального окна
-modalClose.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+modalClose.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+openFormBtn.addEventListener("click", () => window.open(GOOGLE_FORM_URL, "_blank"));
 
-// закрытие при клике вне окна
-window.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
-});
-
-// открыть форму из модального окна
-openFormBtn.addEventListener("click", () => {
-  window.open(GOOGLE_FORM_URL, "_blank");
-});
-
-// кнопки на сайте
-testDriveBtn.addEventListener("click", openModal);
-testDriveBtn2.addEventListener("click", openModal);
-contactBtn.addEventListener("click", openModal);
-
+testDriveBtn?.addEventListener("click", openModal);
+testDriveBtn2?.addEventListener("click", openModal);
+contactBtn?.addEventListener("click", openModal);
 
 // ===================== STYLE BUILDER =====================
 const modelSelect = document.getElementById("model");
@@ -51,12 +37,29 @@ const carMask = document.getElementById("carMask");
 const colorPicker = document.getElementById("colorPicker");
 const colorOverlay = document.getElementById("colorOverlay");
 
+if (!modelSelect  !wheelSelect  !carColor  !carMask  !colorPicker || !colorOverlay) {
+  console.error("ОШИБКА: один из элементов не найден. Проверь id в HTML!");
+}
+
+// DEBUG: выводим что найдено
+console.log("modelSelect:", modelSelect);
+console.log("wheelSelect:", wheelSelect);
+console.log("carColor:", carColor);
+console.log("carMask:", carMask);
+console.log("colorPicker:", colorPicker);
+console.log("colorOverlay:", colorOverlay);
+
 function updateCar() {
   const model = modelSelect.value;
   const wheel = wheelSelect.value;
 
-  carColor.src = ${model}_w${wheel}.png;
-  carMask.src = ${model}.png;
+  const colorSrc = ${model}_w${wheel}.png;
+  const maskSrc = ${model}.png;
+
+  carColor.src = colorSrc;
+  carMask.src = maskSrc;
+
+  console.log("Загружаю:", colorSrc, maskSrc);
 }
 
 modelSelect.addEventListener("change", updateCar);
@@ -66,7 +69,6 @@ colorPicker.addEventListener("input", () => {
   colorOverlay.style.background = colorPicker.value;
 });
 
-// Load saved style
 window.addEventListener("load", () => {
   const saved = localStorage.getItem("epopeyaStyle");
   if (saved) {
@@ -79,7 +81,6 @@ window.addEventListener("load", () => {
   colorOverlay.style.background = colorPicker.value;
 });
 
-// Save style
 window.addEventListener("beforeunload", () => {
   const style = {
     model: modelSelect.value,
