@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const wheel = wheelSelect.value;
 
     // Цветная машина
-    carColor.src = ${model}_w${wheel}.png;
+    carColor.src = `${model}_w${wheel}.png`;
 
     // Ч/Б кузов
-    carMask.src = ${model}.png;
+    carMask.src = `${model}.png`;
 
     // Цвет кузова (фильтр только на кузов)
     colorOverlay.style.background = colorPicker.value;
@@ -30,3 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCar();
 });
+
