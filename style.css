@@ -1,3 +1,4 @@
+/* ===================== GLOBAL ===================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +17,7 @@ body {
   padding: 20px;
 }
 
-/* HEADER */
+/* ===================== HEADER ===================== */
 .header {
   position: fixed;
   top: 0;
@@ -79,7 +80,7 @@ body {
   background: #fff;
 }
 
-/* MOBILE MENU */
+/* ===================== MOBILE MENU ===================== */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -98,7 +99,7 @@ body {
   text-decoration: none;
 }
 
-/* HERO */
+/* ===================== HERO ===================== */
 .hero {
   padding-top: 110px;
 }
@@ -124,7 +125,7 @@ body {
   width: 100%;
 }
 
-/* SECTIONS */
+/* ===================== SECTIONS ===================== */
 .luxury-section {
   padding: 60px 0;
 }
@@ -179,12 +180,12 @@ body {
   padding: 15px;
 }
 
-/* STYLE BUILDER */
+/* ===================== STYLE BUILDER ===================== */
 .style-builder {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  align-items: center;
+  align-items: start;
 }
 
 .style-preview {
@@ -194,20 +195,28 @@ body {
   margin: auto;
 }
 
-.style-preview img,
-.style-preview .color-overlay {
+.car-canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9; /* важно: фиксируем пропорции */
+  overflow: hidden;
+}
+
+.car-canvas img,
+.car-canvas .color-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.carColor {
+.car-color {
   z-index: 1;
 }
 
-.carBody {
+.car-mask {
   z-index: 2;
 }
 
@@ -218,11 +227,6 @@ body {
   pointer-events: none;
 }
 
-.wheel {
-  z-index: 4;
-}
-
-/* controls */
 .style-controls {
   background: rgba(255,255,255,0.06);
   padding: 20px;
@@ -248,7 +252,7 @@ body {
   color: white;
 }
 
-/* REVIEWS */
+/* ===================== REVIEWS ===================== */
 .review-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
@@ -260,14 +264,7 @@ body {
   border-radius: 12px;
 }
 
-/* CONTACT */
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-}
-
-/* MODAL */
+/* ===================== MODAL ===================== */
 .modal {
   display: none;
   position: fixed;
@@ -294,11 +291,11 @@ body {
   font-size: 24px;
 }
 
-/* MOBILE */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
   .nav {
     display: none;
-     }
+  }
   .burger {
     display: flex;
   }
@@ -315,4 +312,11 @@ body {
   .style-builder {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===================== CONTACT ===================== */
+.contact-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
 }
