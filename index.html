@@ -152,31 +152,50 @@
 
 <section id="style" class="luxury-section">
   <div class="container">
+
     <h2>Создай стиль</h2>
 
     <div class="style-builder">
-      <div class="style-preview">
-        <!-- 1) Ч/Б корпус -->
-        <img id="carImage" src="anapovskiy_mazut.png" alt="машина" class="car">
 
-        <!-- 2) Цветовой слой -->
+      <!-- ПРЕВЬЮ АВТО -->
+      <div class="style-preview">
+
+        <!-- Ч/Б корпус автомобиля -->
+        <img
+          id="carImage"
+          class="car"
+          src="anapovskiy_mazut.png"
+          alt="Корпус автомобиля"
+        >
+
+        <!-- Цветовой слой -->
         <div id="colorOverlay" class="color-overlay"></div>
 
-        <!-- 3) Диски -->
-        <img id="wheelImage" src="anapovskiy_mazut_w1.png" alt="диски" class="wheel">
+        <!-- Диски -->
+        <img
+          id="wheelImage"
+          class="wheel"
+          src="anapovskiy_mazut_w1.png"
+          alt="Диски автомобиля"
+        >
+
       </div>
 
+      <!-- УПРАВЛЕНИЕ СТИЛЕМ -->
       <div class="style-controls">
-        <label>Модель:
+
+        <label>
+          Модель
           <select id="model">
             <option value="anapovskiy_mazut">Анапский мазут</option>
             <option value="zadumchivaya_sliva">Задумчивая слива</option>
             <option value="gzhel">Гжель</option>
-            <option value="ashkudishka">Ашкудишка личи</option>
+            <option value="ashkudishka">Ашкудишка Личи</option>
           </select>
         </label>
 
-        <label>Диски:
+        <label>
+          Диски
           <select id="wheel">
             <option value="1">Диски 1</option>
             <option value="2">Диски 2</option>
@@ -184,11 +203,15 @@
           </select>
         </label>
 
-        <label>Цвет:
+        <label>
+          Цвет кузова
           <input type="color" id="colorPicker" value="#ff0000">
         </label>
+
       </div>
+
     </div>
+
   </div>
 </section>
 
@@ -240,6 +263,7 @@
 <script src="script.js?v=2"></script>
 </body>
 </html>
+
 
 
 
