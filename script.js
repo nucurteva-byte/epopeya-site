@@ -5,7 +5,7 @@ const carImage = document.getElementById("carImage");
 function updateCar() {
   const model = modelSelect.value;
   const wheel = wheelSelect.value;
-  carImage.src = `${model}_w${wheel}.png`;
+  carImage.src = ${model}_w${wheel}.png;
 }
 updateCar();
 
