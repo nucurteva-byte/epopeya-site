@@ -38,14 +38,7 @@ body {
 .logo {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 0 0 20px rgba(255,255,255,0.95);
-  animation: logoGlow 2.5s infinite;
-}
-
-@keyframes logoGlow {
-  0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.7); }
-  50% { text-shadow: 0 0 25px rgba(255,255,255,1); }
+  text-shadow: 0 0 15px rgba(255,255,255,0.8);
 }
 
 .nav {
@@ -68,7 +61,12 @@ body {
   color: #000;
   font-weight: 700;
   border-radius: 8px;
-  box-shadow: 0 0 25px rgba(201,160,42,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(201,160,42,0.8);
 }
 
 /* ===================== HERO ===================== */
@@ -79,20 +77,14 @@ body {
 
 .hero h1 {
   font-size: 48px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  animation: glow 2.5s ease-in-out infinite;
+  margin-bottom: 15px;
+  text-shadow: 0 0 30px rgba(201,160,42,0.9);
 }
 
-.hero .subtitle {
+.subtitle {
   font-size: 18px;
-  margin-top: 10px;
-  opacity: 0.9;
-}
-
-@keyframes glow {
-  0%, 100% { text-shadow: 0 0 8px rgba(201,160,42,0.8); }
-  50% { text-shadow: 0 0 30px rgba(201,160,42,1); }
+  margin-bottom: 20px;
+  color: rgba(255,255,255,0.8);
 }
 
 /* ===================== SECTIONS ===================== */
@@ -100,73 +92,56 @@ body {
   padding: 60px 0;
 }
 
-/* ===================== CHARACTERISTICS ===================== */
-.spec-grid {
+/* ===================== GRID CARDS ===================== */
+.spec-grid,
+.unique-grid,
+.collection-grid,
+.model-grid,
+.contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+/* ===================== SPEC / UNIQUE ===================== */
+.spec-grid,
+.unique-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .spec-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 35px rgba(201, 160, 42, 0.25);
-  animation: float 3.5s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(201,160,42,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.spec-card h3 {
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-.spec-card p {
-  font-size: 16px;
-  opacity: 0.9;
-}
-
-/* ===================== UNIQUE ===================== */
-.unique-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.unique-grid .spec-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 0 35px rgba(201, 160, 42, 0.25);
-  animation: float 3.5s ease-in-out infinite;
+.spec-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(201,160,42,0.85);
 }
 
 /* ===================== COLLECTION ===================== */
 .collection-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
 }
 
 .car-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(201, 160, 42, 0.35);
+  box-shadow: 0 0 25px rgba(201,160,42,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .car-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 40px rgba(201, 160, 42, 0.85);
+  box-shadow: 0 0 50px rgba(201,160,42,0.85);
 }
 
 .car-card img {
   width: 100%;
+  display: block;
 }
 
 .car-info {
@@ -175,26 +150,35 @@ body {
 
 /* ===================== MODELS ===================== */
 .model-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
 }
 
 .model-card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 25px rgba(201, 160, 42, 0.2);
-  opacity: 0;
-  transform: translateY(15px);
-  animation: appear 1s forwards;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(201,160,42,0.15);
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes appear {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.model-card::after {
+  content: "₽";
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 26px;
+  opacity: 0.2;
+}
+
+.model-card h3 {
+  margin-bottom: 12px;
+}
+
+.model-card p {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /* ===================== DISK BUILDER ===================== */
@@ -209,12 +193,8 @@ body {
   width: 100%;
   max-width: 600px;
   display: block;
-  box-shadow: 0 0 35px rgba(201, 160, 42, 0.45);
-  transition: filter 0.5s ease;
-}
-
-.style-preview img:hover {
-  filter: brightness(1.05);
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(201,160,42,0.35);
 }
 
 .style-controls {
@@ -224,7 +204,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: 0 0 30px rgba(201, 160, 42, 0.25);
 }
 
 .style-controls label {
@@ -242,9 +221,13 @@ body {
 }
 
 /* ===================== REVIEWS ===================== */
-.reviews-title {
+.reviews-section {
+  padding: 60px 0;
+}
+
+.reviews-section h2 {
   text-align: center;
-  font-size: 40px;
+  font-size: 44px;
   margin-bottom: 30px;
   animation: blink 1.8s infinite;
 }
@@ -254,120 +237,68 @@ body {
   25%, 75% { opacity: 0.4; }
 }
 
-.reviews-grid,
-.review {
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.review-card {
   background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 30px;
+  border-radius: 16px;
+  padding: 25px;
   text-align: center;
-  box-shadow: 0 0 18px rgba(201, 160, 42, 0.4);
-  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 0 25px rgba(201,160,42,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.reviews-grid:hover,
-.review:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(201, 160, 42, 0.8);
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(201,160,42,0.85);
 }
 
-.reviews-grid img,
-.review img {
+.review-card img {
   width: 100%;
   max-width: 320px;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 15px;
 }
 
-.reviews-grid p,
-.review p {
+.review-card p {
   font-size: 16px;
   line-height: 1.4;
   margin-bottom: 10px;
 }
 
-.reviews-grid strong,
-.review strong {
+.review-card strong {
   display: block;
-  margin-top: 5px;
   font-weight: 700;
+  margin-top: 10px;
 }
 
 /* ===================== VIDEO REVIEW ===================== */
 .video-review {
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  padding: 20px;
+  justify-content: center;
 }
 
 .video-frame {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
+  width: 320px;
+  height: 426px; /* 3:4 ratio */
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(201, 160, 42, 0.65);
-  background: #111;
-  aspect-ratio: 3 / 4;
+  box-shadow: 0 0 40px rgba(201,160,42,0.5);
 }
 
 .video-frame video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-}
-
-.video-controls {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.video-btn {
-  padding: 10px 18px;
-  border: none;
-  background: rgba(201, 160, 42, 0.92);
-  color: #000;
-  font-weight: 800;
-  border-radius: 12px;
-  cursor: pointer;
-  opacity: 0.95;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.video-btn:hover {
-  transform: translateY(-2px);
-  opacity: 1;
-}
-
-.sound-btn {
-  background: rgba(255, 255, 255, 0.22);
-  color: #fff;
-}
-
-.video-desc {
-  text-align: center;
-}
-
-.video-desc h3 {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.video-desc p {
-  font-size: 16px;
-  opacity: 0.9;
 }
 
 /* ===================== CONTACT ===================== */
 .contact-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
@@ -414,7 +345,8 @@ body {
 
   .collection-grid,
   .contact-grid,
-  .model-grid {
+  .model-grid,
+  .reviews-grid {
     grid-template-columns: 1fr;
   }
 
