@@ -1,6 +1,4 @@
-/* =========================
-   ВОССТАНОВЛЕНИЕ СТИЛЯ САЙТА
-   ========================= */
+/* ====== ОБЩИЕ СТИЛИ ====== */
 
 body {
   background: #000;
@@ -20,9 +18,33 @@ a {
   margin: 0 auto;
 }
 
-/* =========================
-   БЛОК С КАРТОЧКОЙ МАШИНЫ
-   ========================= */
+/* ====== HEADER ====== */
+
+.header {
+  background: #000;
+  padding: 15px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav a {
+  margin: 0 10px;
+}
+
+/* ====== СЕКЦИЯ "СОЗДАЙ СТИЛЬ" ====== */
+
+.style-section {
+  padding: 30px 0;
+}
 
 .car-preview {
   position: relative;
@@ -41,7 +63,6 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  mix-blend-mode: multiply;
 }
 
 .color-overlay {
@@ -50,13 +71,10 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
-/* =========================
-   ФОРМА ВЫБОРА МОДЕЛИ
-   ========================= */
+/* ====== ФОРМА ====== */
 
 .style-controls {
   max-width: 800px;
@@ -80,4 +98,24 @@ a {
   border: 1px solid #333;
   background: #222;
   color: #fff;
+}
+
+/* ====== ОСТАЛЬНЫЕ СЕКЦИИ ====== */
+
+.luxury-section {
+  padding: 30px 0;
+}
+
+.reviews-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.review-card,
+.contact-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
 }
