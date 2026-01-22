@@ -1,40 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const modelSelect = document.getElementById("model");
-  const wheelSelect = document.getElementById("wheel");
-  const colorPicker = document.getElementById("colorPicker");
+const modelSelect = document.getElementById("model");
+const wheelSelect = document.getElementById("wheel");
+const colorPicker = document.getElementById("colorPicker");
 
-  const carColor = document.getElementById("carColor");
-  const colorOverlay = document.getElementById("colorOverlay");
+const carColor = document.getElementById("carColor");      // цветная машина с дисками
+const carMask = document.getElementById("carMask");        // ч/б кузов (маска)
+const colorOverlay = document.getElementById("colorOverlay");
 
-  function updateCar() {
-    const model = modelSelect.value;
-    const wheel = wheelSelect.value;
+// Если у модели нет дисков — ставим диски 1 (или скрываем)
+const modelsWithoutWheels = ["model_without_wheels"]; // <-- сюда добавь модель без дисков
 
-    // Цветная картинка (фон + диски)
-    carColor.src = `${model}_w${wheel}.png`;
+function updateCar() {
+  const model = modelSelect.value;
+  const wheel = wheelSelect.value;
+  const color = colorPicker.value;
 
-    // 🔥 Ч/Б кузов как МАСКА
-    colorOverlay.style.webkitMaskImage = `url(${model}.png)`;
-    colorOverlay.style.maskImage = `url(${model}.png)`;
+  // если модели нет дисков — ставим диск 1 (или скрываем выбор)
+  let wheelNumber = wheel;
+
+  if (modelsWithoutWheels.includes(model)) {
+    wheelNumber = 1;
+    wheelSelect.value = 1;
+    wheelSelect.disabled = true;
+  } else {
+    wheelSelect.disabled = false;
   }
 
-function updateColor() {
-  colorOverlay.style.backgroundColor =
-    hexToRgba(colorPicker.value, 0.55);
+  // Цветная машина с дисками
+  carColor.src = `${model}_w${wheelNumber}.png`;
+
+  // ЧБ кузов (маска)
+  carMask.src = `${model}.png`;
+
+  // Цветовой фильтр (только на кузов)
+  colorOverlay.style.backgroundColor = color;
 }
 
-function hexToRgba(hex, alpha) {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
+// Начальная загрузка
+updateCar();
 
-  modelSelect.addEventListener("change", updateCar);
-  wheelSelect.addEventListener("change", updateCar);
-  colorPicker.addEventListener("input", updateColor);
-
-  // Инициализация
-  updateCar();
-  updateColor();
-});
+// Слушатели
+modelSelect.addEventListener("change", updateCar);
+wheelSelect.addEventListener("change", updateCar);
+colorPicker.addEventListener("input", updateCar);
