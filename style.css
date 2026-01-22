@@ -1,4 +1,4 @@
-/* ===================== GLOBAL ===================== */
+/* ===== GLOBAL ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,9 +6,9 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background: #070707;
   color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -17,28 +17,20 @@ body {
   padding: 20px;
 }
 
-/* ===================== HEADER ===================== */
+/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 15px 0;
 }
 
 .header-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 2px;
+  align-items: center;
 }
 
 .nav {
@@ -47,90 +39,71 @@ body {
 }
 
 .nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .btn {
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
   background: #c9a02a;
-  color: #000;
-  font-weight: 700;
+  border: none;
+  padding: 10px 18px;
   border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* ===================== SECTIONS ===================== */
+/* ===== HERO ===== */
 .hero {
   padding-top: 140px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 52px;
-  text-shadow:
-    0 0 20px rgba(201,160,42,0.6),
-    0 0 50px rgba(201,160,42,0.4);
+  font-size: 48px;
 }
 
-.subtitle {
-  margin-top: 20px;
-  font-size: 18px;
-  opacity: 0.85;
-}
-
+/* ===== SECTIONS ===== */
 .luxury-section {
   padding: 80px 0;
 }
 
-/* ===================== COLLECTION ===================== */
-.collection-grid {
+/* ===== GRIDS ===== */
+.spec-grid,
+.unique-grid,
+.collection-grid,
+.model-grid,
+.contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
+/* ===== CARDS ===== */
+.spec-card,
+.model-card,
+.contact-card,
 .car-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 14px;
-  overflow: hidden;
-  transition: 0.4s;
-}
-
-.car-card:hover {
-  box-shadow:
-    0 0 25px rgba(201,160,42,0.5),
-    0 0 60px rgba(201,160,42,0.25);
-  transform: translateY(-6px);
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .car-card img {
   width: 100%;
+  border-radius: 12px;
 }
 
 .car-info {
-  padding: 16px;
+  margin-top: 10px;
 }
 
-/* ===================== PRICES ===================== */
-.model-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
+/* ===== PRICES ===== */
 .model-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 25px;
   text-align: center;
-
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.8s ease;
+  transition: 0.6s;
 }
 
 .model-card.show {
@@ -138,41 +111,17 @@ body {
   transform: translateY(0);
 }
 
-.model-card h3 {
-  margin-bottom: 10px;
-}
-
-/* ЦЕНА */
 .model-card p {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: bold;
   color: #ffd76a;
-  position: relative;
-  padding-left: 26px;
-  text-shadow:
-    0 0 10px rgba(201,160,42,0.7),
-    0 0 30px rgba(201,160,42,0.4);
 }
 
-/* ИКОНКА ВАЛЮТЫ */
-.model-card p::before {
-  content: "$";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #c9a02a;
-  font-weight: 900;
-  text-shadow:
-    0 0 15px rgba(201,160,42,0.9),
-    0 0 35px rgba(201,160,42,0.6);
-}
-
-/* ===================== DISKS ===================== */
+/* ===== DISKS ===== */
 .style-builder {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: center;
 }
 
 .style-preview img {
@@ -182,19 +131,16 @@ body {
 
 .style-controls {
   background: rgba(255,255,255,0.06);
-  padding: 25px;
-  border-radius: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
 }
 
-/* ===================== REVIEWS ===================== */
+/* ===== REVIEWS ===== */
 .reviews-grid,
 .review {
   background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 25px;
+  border-radius: 12px;
+  padding: 20px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -202,24 +148,10 @@ body {
 .reviews-grid img,
 .review img {
   max-width: 320px;
-  border-radius: 14px;
-  margin-bottom: 15px;
+  border-radius: 12px;
 }
 
-/* ===================== CONTACT ===================== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 25px;
-}
-
-/* ===================== MODAL ===================== */
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
@@ -227,32 +159,25 @@ body {
   background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
-  z-index: 2000;
 }
 
 .modal-content {
   background: #111;
   padding: 30px;
-  border-radius: 14px;
-  width: 90%;
-  max-width: 900px;
+  border-radius: 12px;
 }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  cursor: pointer;
-}
-
-/* ===================== RESPONSIVE ===================== */
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
-  .nav { display: none; }
+  .nav {
+    display: none;
+  }
+
+  .spec-grid,
+  .unique-grid,
   .collection-grid,
   .model-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+  .contact-grid,
   .style-builder {
     grid-template-columns: 1fr;
   }
