@@ -1,120 +1,42 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #070707; color: #fff; }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #070707;
-  color: #fff;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   background: rgba(0,0,0,0.8);
   backdrop-filter: blur(8px);
   z-index: 1000;
   padding: 15px 0;
 }
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 24px; font-weight: 700; }
+.nav { display: flex; gap: 15px; }
+.nav a { color: #fff; text-decoration: none; }
+.btn { padding: 10px 18px; border: none; cursor: pointer; background: #c9a02a; color: #000; font-weight: 700; border-radius: 8px; }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.hero { padding-top: 110px; }
+.hero h1 { font-size: 56px; }
+.subtitle { font-size: 18px; margin-top: 20px; }
+
+.luxury-section { padding: 60px 0; }
+
+.spec-grid, .unique-grid, .collection-grid, .reviews-grid, .contact-grid, .model-grid {
+  display: grid; gap: 20px;
 }
+.spec-grid, .unique-grid, .collection-grid, .model-grid { grid-template-columns: repeat(3, 1fr); }
+.reviews-grid { grid-template-columns: repeat(3, 1fr); }
+.contact-grid { grid-template-columns: repeat(3, 1fr); }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.nav {
-  display: flex;
-  gap: 15px;
-}
-
-.nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.btn {
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
-  background: #c9a02a;
-  color: #000;
-  font-weight: 700;
-  border-radius: 8px;
-}
-
-.hero {
-  padding-top: 110px;
-}
-
-.hero h1 {
-  font-size: 56px;
-}
-
-.subtitle {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-.luxury-section {
-  padding: 60px 0;
-}
-
-.spec-grid,
-.unique-grid,
-.collection-grid,
-.reviews-grid,
-.contact-grid,
-.model-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.spec-grid,
-.unique-grid,
-.collection-grid,
-.model-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.reviews-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.contact-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.spec-card,
-.car-card,
-.review-card,
-.contact-card,
-.model-card {
+.spec-card, .car-card, .review-card, .contact-card, .model-card {
   background: rgba(255,255,255,0.06);
   padding: 20px;
   border-radius: 12px;
 }
 
-.car-card img,
-.review-card img {
-  width: 100%;
-  border-radius: 12px;
-}
+.car-card img, .review-card img { width: 100%; border-radius: 12px; }
 
 .style-builder {
   display: grid;
@@ -123,14 +45,7 @@ body {
   align-items: start;
 }
 
-.style-preview {
-  width: 100%;
-}
-
-.car-image {
-  width: 100%;
-  max-width: 600px;
-}
+.car-image { width: 100%; max-width: 600px; }
 
 .style-controls {
   background: rgba(255,255,255,0.06);
@@ -141,34 +56,44 @@ body {
   gap: 15px;
 }
 
-.style-controls label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-weight: 500;
-}
-
+.style-controls label { display: flex; flex-direction: column; gap: 8px; font-weight: 500; }
 .style-controls select {
-  padding: 10px;
-  border-radius: 10px;
+  padding: 10px; border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(0,0,0,0.3);
-  color: white;
+  background: rgba(0,0,0,0.3); color: white;
 }
 
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-  .style-builder {
-    grid-template-columns: 1fr;
-  }
-  .spec-grid,
-  .unique-grid,
-  .collection-grid,
-  .model-grid,
-  .reviews-grid,
-  .contact-grid {
+  .nav { display: none; }
+  .style-builder { grid-template-columns: 1fr; }
+  .spec-grid, .unique-grid, .collection-grid, .model-grid, .reviews-grid, .contact-grid {
     grid-template-columns: 1fr;
   }
 }
