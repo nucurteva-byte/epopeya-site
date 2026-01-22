@@ -67,18 +67,56 @@ body {
   padding-top: 110px;
 }
 
-.hero h1 {
-  font-size: 56px;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 20px;
-  animation: glow 2s infinite;
+.luxury-section {
+  padding: 60px 0;
 }
 
-.subtitle {
-  text-align: center;
+/* ===================== CHARACTERISTICS ===================== */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.spec-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(201, 160, 42, 0.2);
+}
+
+.spec-card h3 {
+  margin-bottom: 12px;
   font-size: 18px;
-  margin-bottom: 40px;
+}
+
+.spec-card p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ===================== UNIQUE ===================== */
+.unique-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.unique-grid .spec-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(201, 160, 42, 0.2);
+}
+
+.unique-grid .spec-card h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.unique-grid .spec-card p {
+  font-size: 16px;
+  opacity: 0.9;
 }
 
 /* ===================== GLOW ANIMATION ===================== */
