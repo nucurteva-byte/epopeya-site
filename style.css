@@ -18,41 +18,34 @@ body {
 }
 
 /* ===== STYLE BUILDER (ИЗОЛИРОВАННО) ===== */
-#style .style-preview {
-  max-width: 700px;
-  margin: auto;
-}
-
-#style .car-canvas {
+.car-preview {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* 🔥 стабилизирует форму */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-#style .car-color {
+.car-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
   display: block;
 }
 
-/* 🔥 ЦВЕТ КУЗОВА */
-#style .color-overlay {
+.car-mask {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
 
-  /* 🔥 ПОЛУПРОЗРАЧНЫЙ ЦВЕТ */
-  background-color: rgba(255, 0, 0, 0.55);
-
-  /* 🔥 МАСКА */
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5; /* полупрозрачный */
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
