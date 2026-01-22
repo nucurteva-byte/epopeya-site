@@ -17,175 +17,19 @@ body {
   padding: 20px;
 }
 
-/* ===================== HEADER ===================== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
-  padding: 15px 0;
-}
-
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.btn {
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
-  background: #c9a02a;
-  color: #000;
-  font-weight: 700;
-  border-radius: 8px;
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.burger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-}
-
-/* MOBILE MENU */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.9);
-  padding: 20px;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1500;
-}
-
-.mobile-menu a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* HERO */
-.hero {
-  padding-top: 110px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 56px;
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  font-size: 18px;
-  margin: 20px 0;
-}
-
-.hero-image img {
-  width: 100%;
-}
-
-/* SECTIONS */
-.luxury-section {
-  padding: 60px 0;
-}
-
-.spec-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.spec-card {
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.unique-grid,
-.collection-grid,
-.reviews-grid,
-.contact-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.unique-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.collection-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.reviews-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.contact-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.car-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.car-card img {
-  width: 100%;
-}
-
-.car-info {
-  padding: 15px;
-}
-
 /* ===================== STYLE BUILDER ===================== */
+
 .style-builder {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
   align-items: start;
 }
 
+/* ---- Preview ---- */
 .style-preview {
-  position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
 }
 
@@ -194,29 +38,31 @@ body {
   width: 100%;
 }
 
-.car-canvas img,
-.car-canvas .color-overlay {
+/* Цветная картинка (фон + диски) */
+.car-color {
+  width: 100%;
+  display: block;
+}
+
+/* Цвет кузова */
+.color-overlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+  background-color: red;
 
-.car-color {
-  z-index: 1;
-}
+  /* 🔥 МАСКА ПО Ч/Б КУЗОВУ */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
 
-.car-mask {
-  z-index: 2;
-}
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
 
-.color-overlay {
-  z-index: 3;
-  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
+/* ---- Controls ---- */
 .style-controls {
   background: rgba(255,255,255,0.06);
   padding: 20px;
@@ -242,72 +88,9 @@ body {
   color: white;
 }
 
-/* REVIEWS */
-.review-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 15px;
-}
-
-.review-card img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* CONTACT */
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.modal-content {
-  background: #111;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-/* RESPONSIVE */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
-  .nav { display: none; }
-  .burger { display: flex; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .spec-grid,
-  .unique-grid,
-  .collection-grid,
-  .reviews-grid,
-  .contact-grid { grid-template-columns: 1fr; }
-  .style-builder { grid-template-columns: 1fr; }
-}
-
-.review-card img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
+  .style-builder {
+    grid-template-columns: 1fr;
+  }
 }
