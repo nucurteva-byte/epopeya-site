@@ -21,7 +21,7 @@
       <a href="#reviews">Отзывы</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <button class="btn">Записаться</button>
+    <button class="btn" id="openModalBtn">Записаться</button>
   </div>
 </header>
 
@@ -245,12 +245,33 @@
         <div class="contact-card">
           <h3>Форма связи</h3>
           <p>Нажмите “Связаться” — откроется форма.</p>
+          <button class="btn" id="openModalBtn2">Связаться</button>
         </div>
       </div>
     </div>
   </section>
 
 </main>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" id="modalClose">&times;</span>
+    <h3>Оставьте заявку</h3>
+
+    <!-- ЗДЕСЬ ВСТАВЬ СВОЮ GOOGLE FORM -->
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfD...YOUR_FORM_LINK.../viewform?embedded=true"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      Загрузка…
+    </iframe>
+
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
