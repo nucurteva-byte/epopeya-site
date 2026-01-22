@@ -17,47 +17,41 @@ body {
   padding: 20px;
 }
 
-/* ===================== STYLE BUILDER ===================== */
-
-.style-builder {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: start;
-}
-
-/* ---- Preview ---- */
-.style-preview {
-  width: 100%;
+/* ===== STYLE BUILDER (ИЗОЛИРОВАННО) ===== */
+#style .style-preview {
   max-width: 700px;
   margin: auto;
 }
 
-.car-canvas {
+#style .car-canvas {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9; /* 🔥 стабилизирует форму */
 }
 
-/* Цветная картинка (фон + диски) */
-.car-color {
+#style .car-color {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
-/* Цвет кузова */
-.color-overlay {
+/* 🔥 ЦВЕТ КУЗОВА */
+#style .color-overlay {
   position: absolute;
   inset: 0;
-  background-color: red;
 
-  /* 🔥 МАСКА ПО Ч/Б КУЗОВУ */
+  /* 🔥 ПОЛУПРОЗРАЧНЫЙ ЦВЕТ */
+  background-color: rgba(255, 0, 0, 0.55);
+
+  /* 🔥 МАСКА */
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
   -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 
   mask-repeat: no-repeat;
-  mask-size: contain;
   mask-position: center;
+  mask-size: contain;
 
   pointer-events: none;
 }
