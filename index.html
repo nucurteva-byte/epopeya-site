@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -25,152 +25,41 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#hero">Главная</a>
-  <a href="#specs">Характеристики</a>
-  <a href="#unique">Уникальность</a>
-  <a href="#collection">Коллекция</a>
-  <a href="#style">Создай стиль</a>
-  <a href="#reviews">Отзывы</a>
-  <a href="#contact">Контакты</a>
-</div>
-
-<section id="hero" class="hero luxury-section">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>ЭПОПЕЯ</h1>
-      <p class="subtitle">Самый мощный автомобиль. Двигатель V10 — 2228 л.с. Разгон 0–100 за 1,2 секунды.</p>
-      <div class="hero-buttons">
-        <button class="btn" id="testDriveBtn2">Тест-драйв</button>
-        <button class="btn ghost" id="contactBtn">Связаться</button>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="anapovskiy_mazut_w1.png" alt="Анапский мазут">
-    </div>
-  </div>
-</section>
-
-<section id="specs" class="luxury-section">
-  <div class="container">
-    <h2>Характеристики</h2>
-    <div class="spec-grid">
-      <div class="spec-card"><h3>Двигатель</h3><p>V10</p></div>
-      <div class="spec-card"><h3>Мощность</h3><p>2228 л.с.</p></div>
-      <div class="spec-card"><h3>Разгон</h3><p>0–100 за 1,2 секунды</p></div>
-      <div class="spec-card"><h3>Длина</h3><p>6 метров</p></div>
-      <div class="spec-card"><h3>Ширина</h3><p>3 метра</p></div>
-      <div class="spec-card"><h3>Класс</h3><p>Премиум. Дающий в рот BUGATTI</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="unique" class="luxury-section">
-  <div class="container">
-    <h2>Уникальность</h2>
-    <div class="unique-grid">
-      <div class="car-card">
-        <img src="hohloma.png" alt="Хохлома">
-        <div class="car-info">
-          <h3>ХОХЛОМСКАЯ РОСПИСЬ</h3>
-          <p>Лимитированная расцветка (третяя фотография). Цена по договоренности.</p>
-        </div>
-      </div>
-      <div class="car-card">
-        <img src="gzhel.png" alt="Гжель">
-        <div class="car-info">
-          <h3>Гжель</h3>
-          <p>Первый лимитированный заказ для Мамаевой Марии. Кто успел — тот и съел.</p>
-        </div>
-      </div>
-      <div class="car-card">
-        <img src="ashkudishka.png" alt="Ашкудишка Личи">
-        <div class="car-info">
-          <h3>Ашкудишка Личи</h3>
-          <p>Цена 300000$. Встроенный кальян вместо подстаканников.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="collection" class="luxury-section">
-  <div class="container">
-    <h2>Коллекция</h2>
-    <div class="collection-grid">
-      <div class="car-card">
-        <img src="anapovskiy_mazut_w1.png" alt="Анапский мазут">
-        <div class="car-info">
-          <h3>Анапский мазут</h3>
-          <p>Цена 420000$ с золотыми дисками.</p>
-        </div>
-      </div>
-      <div class="car-card">
-        <img src="zadumchivaya_sliva_w1.png" alt="Задумчивая слива">
-        <div class="car-info">
-          <h3>Задумчивая слива</h3>
-          <p>Цена от 444444$.</p>
-        </div>
-      </div>
-      <div class="car-card">
-        <img src="cocacola_zero_w1.png" alt="CocaCola zero">
-        <div class="car-info">
-          <h3>CocaCola zero</h3>
-          <p>Лимитированная коллекция. "Хочешь есть - попей водички." Цена 239000$.</p>
-        </div>
-      </div>
-      <div class="car-card">
-        <img src="heroin_needle_w1.
-          png" alt="Героиновая игла">
-        <div class="car-info">
-          <h3>Героиновая игла</h3>
-          <p>Лимитированная коллекция. "Райское наслаждение". Цена 670000$.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== STYLE BUILDER ====== -->
-<section id="style" class="luxury-section">
+<section id="style" class="style-section">
   <div class="container">
     <h2>Создай стиль</h2>
 
-    <div class="style-builder">
+    <div class="car-preview">
+      <img id="carColor" class="car-img" src="" alt="Цветная машина">
+      <img id="carMask" class="car-mask" src="" alt="Кузов">
+      <div id="colorOverlay" class="color-overlay"></div>
+    </div>
 
-<div class="car-preview">
-  <img id="carColor" class="car-img" src="" alt="Цветная машина">
-  <img id="carMask" class="car-mask" src="" alt="Кузов маска">
-  <div id="colorOverlay" class="color-overlay"></div>
-</div>
+    <div class="style-controls">
+      <label>
+        Модель
+        <select id="model">
+          <option value="anapovskiy_mazut">Анапский мазут</option>
+          <option value="zadumchivaya_sliva">Задумчивая слива</option>
+          <option value="gzhel">Гжель</option>
+          <option value="ashkudishka">Ашкудишка Личи</option>
+        </select>
+      </label>
 
-      <div class="style-controls">
-        <label>
-          Модель
-          <select id="model">
-            <option value="anapovskiy_mazut">Анапский мазут</option>
-            <option value="zadumchivaya_sliva">Задумчивая слива</option>
-            <option value="gzhel">Гжель</option>
-            <option value="ashkudishka">Ашкудишка Личи</option>
-          </select>
-        </label>
+      <label>
+        Диски
+        <select id="wheel">
+          <option value="1">Диски 1</option>
+          <option value="2">Диски 2</option>
+          <option value="3">Диски 3</option>
+          <option value="4">Диски 4</option>
+        </select>
+      </label>
 
-        <label>
-          Диски
-          <select id="wheel">
-            <option value="1">Диски 1</option>
-            <option value="2">Диски 2</option>
-            <option value="3">Диски 3</option>
-            <option value="4">Диски 4</option>
-          </select>
-        </label>
-
-        <label>
-          Цвет кузова
-          <input type="color" id="colorPicker" value="#ff0000">
-        </label>
-      </div>
-
+      <label>
+        Цвет кузова
+        <input type="color" id="colorPicker" value="#ff0000">
+      </label>
     </div>
   </div>
 </section>
@@ -211,19 +100,6 @@
   </div>
 </section>
 
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="modalClose">&times;</span>
-    <h3>Оставьте заявку</h3>
-    <p>Заполните форму, и мы свяжемся с вами.</p>
-    <button class="btn" id="openFormBtn">Открыть форму</button>
-  </div>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
