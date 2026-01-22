@@ -1,219 +1,256 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЭПОПЕЯ</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container header-inner">
-    <div class="logo">СВО</div>
+    <div class="logo">ЭПОПЕЯ</div>
     <nav class="nav">
       <a href="#hero">Главная</a>
       <a href="#specs">Характеристики</a>
       <a href="#unique">Уникальность</a>
       <a href="#collection">Коллекция</a>
-      <a href="#style">Создай стиль</a>
+      <a href="#models">Наши модели</a>
+      <a href="#disks">Выбери свои диски</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <button class="btn" id="testDriveBtn">Записаться</button>
-    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    <button class="btn">Записаться</button>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#hero">Главная</a>
-  <a href="#specs">Характеристики</a>
-  <a href="#unique">Уникальность</a>
-  <a href="#collection">Коллекция</a>
-  <a href="#style">Создай стиль</a>
-  <a href="#reviews">Отзывы</a>
-  <a href="#contact">Контакты</a>
-</div>
-
-<!-- HERO -->
-<section id="hero" class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>ЭПОПЕЯ — Статус Вне Ограничений</h1>
-      <p class="subtitle">Уникальный автомобиль, который ломает правила и задаёт стиль.</p>
-      <button class="btn">Узнать больше</button>
+<main>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>ЭПОПЕЯ — статус вне ограничений</h1>
+      <p class="subtitle">Уникальные автомобили, которые не похожи ни на что.</p>
     </div>
-    <div class="hero-image">
-      <img src="hero.png" alt="ЭПОПЕЯ">
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- SPECS -->
-<section id="specs" class="luxury-section">
-  <div class="container">
-    <h2>Характеристики</h2>
-    <div class="spec-grid">
-      <div class="spec-card">
-        <h3>Скорость</h3>
-        <p>0-100 за 2.3 секунды</p>
-      </div>
-      <div class="spec-card">
-        <h3>Мощность</h3>
-        <p>1200 л.с.</p>
-      </div>
-      <div class="spec-card">
-        <h3>Дизайн</h3>
-        <p>Лимитированные узоры</p>
+  <!-- ХАРАКТЕРИСТИКИ -->
+  <section id="specs" class="luxury-section">
+    <div class="container">
+      <h2>Характеристики</h2>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <h3>Мощность</h3>
+          <p>1200 л.с.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Скорость</h3>
+          <p>до 350 км/ч</p>
+        </div>
+        <div class="spec-card">
+          <h3>Дизайн</h3>
+          <p>Эксклюзивный стиль</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- UNIQUE -->
-<section id="unique" class="luxury-section">
-  <div class="container">
-    <h2>Уникальность</h2>
-    <div class="unique-grid">
-      <div class="spec-card">
-        <h3>Ручная работа</h3>
-        <p>Каждый узор — уникален.</p>
-      </div>
-      <div class="spec-card">
-        <h3>Эксклюзив</h3>
-        <p>Только ограниченный тираж.</p>
-      </div>
-      <div class="spec-card">
-        <h3>Статус</h3>
-        <p>Это не просто машина — это символ.</p>
+  <!-- УНИКАЛЬНОСТЬ -->
+  <section id="unique" class="luxury-section">
+    <div class="container">
+      <h2>Уникальность</h2>
+      <div class="unique-grid">
+        <div class="spec-card">
+          <h3>Индивидуальность</h3>
+          <p>Каждая модель — отдельное произведение искусства.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Ручная сборка</h3>
+          <p>Внимание к деталям на каждом этапе.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Лимитированная серия</h3>
+          <p>Только ограниченное количество.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- COLLECTION -->
-<section id="collection" class="luxury-section">
-  <div class="container">
-    <h2>Коллекция</h2>
-    <div class="collection-grid">
-      <div class="car-card">
-        <img src="anapovskiy_mazut_w1.png" alt="Анапский мазут">
-        <div class="car-info">
+  <!-- КОЛЛЕКЦИЯ -->
+  <section id="collection" class="luxury-section">
+    <div class="container">
+      <h2>Коллекция</h2>
+      <div class="collection-grid">
+
+        <div class="car-card">
+          <img src="anapovskiy_mazut_w1.png" alt="Анапский мазут">
+          <div class="car-info">
+            <h3>Анапский мазут</h3>
+            <p>Лимитированная коллекция под заказ.</p>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="zadumchivaya_sliva_w1.png" alt="Задумчивая слива">
+          <div class="car-info">
+            <h3>Задумчивая слива</h3>
+            <p>Идеальный городской стиль.</p>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="gzhel_w1.png" alt="Гжель">
+          <div class="car-info">
+            <h3>Гжель</h3>
+            <p>Спорт и контроль в одном.</p>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="ashkudishka_w1.png" alt="Ашкудишка Личи">
+          <div class="car-info">
+            <h3>Ашкудишка Личи</h3>
+            <p>Эксклюзивный дизайн и яркий стиль.</p>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="heroin_needle_w1.png" alt="Героиновая игла">
+          <div class="car-info">
+            <h3>Героиновая игла</h3>
+            <p>Максимальная агрессия и скорость.</p>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="coca_cola_zero_w1.png" alt="CocaCola Zero">
+          <div class="car-info">
+            <h3>CocaCola Zero</h3>
+            <p>Лаконичный стиль и премиум-качество.</p>
+          </div>
+        </div>
+
+        <div class="car-card">
+          <img src="hohloma_w1.png" alt="Хохлома">
+          <div class="car-info">
+            <h3>Хохлома</h3>
+            <p>Народная роспись в современном исполнении.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- НАШИ МОДЕЛИ -->
+  <section id="models" class="luxury-section">
+    <div class="container">
+      <h2>Наши модели</h2>
+      <div class="model-grid">
+        <div class="model-card">
           <h3>Анапский мазут</h3>
-          <p>Лимитированная коллекция под заказ.<br>Цена: 670000$</p>
+          <p>Агрессивный дизайн, максимальная скорость, эксклюзив.</p>
         </div>
-      </div>
-
-      <div class="car-card">
-        <img src="zadumchivaya_sliva_w1.png" alt="Задумчивая слива">
-        <div class="car-info">
+        <div class="model-card">
           <h3>Задумчивая слива</h3>
-          <p>Лимитированная коллекция под заказ.<br>Цена: 670000$</p>
+          <p>Городской стиль, комфорт, плавность.</p>
         </div>
-      </div>
-
-      <div class="car-card">
-        <img src="gzhel_w1.png" alt="Гжель">
-        <div class="car-info">
+        <div class="model-card">
           <h3>Гжель</h3>
-          <p>Лимитированная коллекция под заказ.<br>Цена: 670000$</p>
+          <p>Спорт, контроль, динамика.</p>
+        </div>
+        <div class="model-card">
+          <h3>Ашкудишка Личи</h3>
+          <p>Эксклюзивная раскраска, уникальный стиль.</p>
+        </div>
+        <div class="model-card">
+          <h3>Героиновая игла</h3>
+          <p>Уличный стиль, агрессия, скорость.</p>
+        </div>
+        <div class="model-card">
+          <h3>CocaCola Zero</h3>
+          <p>Лаконичность, премиум, минимализм.</p>
+        </div>
+        <div class="model-card">
+          <h3>Хохлома</h3>
+          <p>Народная роспись в современном исполнении.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- STYLE BUILDER -->
-<section id="style" class="luxury-section">
-  <div class="container">
-    <h2>Создай стиль</h2>
-    <div class="style-builder">
+  <!-- ВЫБЕРИ СВОИ ДИСКИ -->
+  <section id="disks" class="luxury-section">
+    <div class="container">
+      <h2>Выбери свои диски</h2>
 
-      <div class="style-preview">
-        <div class="car-canvas">
-          <img id="carColor" class="car-color" src="" alt="Цветная машина">
-          <img id="carMask" class="car-mask" src="" alt="Ч/Б кузов">
-          <div id="colorOverlay" class="color-overlay"></div>
+      <div class="style-builder">
+        <div class="style-preview">
+          <img id="carImage" class="car-image" src="anapovskiy_mazut_w1.png" alt="Автомобиль">
+        </div>
+
+        <div class="style-controls">
+          <label>
+            Модель
+            <select id="modelSelect">
+              <option value="anapovskiy_mazut">Анапский мазут</option>
+              <option value="zadumchivaya_sliva">Задумчивая слива</option>
+              <option value="gzhel">Гжель</option>
+              <option value="ashkudishka">Ашкудишка Личи</option>
+              <option value="heroin_needle">Героиновая игла</option>
+              <option value="coca_cola_zero">CocaCola Zero</option>
+              <option value="hohloma">Хохлома</option>
+            </select>
+          </label>
+
+          <label>
+            Диски
+            <select id="wheelSelect">
+              <option value="1">Диски 1</option>
+              <option value="2">Диски 2</option>
+              <option value="3">Диски 3</option>
+              <option value="4">Диски 4</option>
+            </select>
+          </label>
         </div>
       </div>
-
-      <div class="style-controls">
-        <label>
-          Модель
-          <select id="model">
-            <option value="anapovskiy_mazut">Анапский мазут</option>
-            <option value="zadumchivaya_sliva">Задумчивая слива</option>
-            <option value="gzhel">Гжель</option>
-            <option value="ashkudishka">Ашкудишка Личи</option>
-          </select>
-        </label>
-
-        <label>
-          Диски
-          <select id="wheel">
-            <option value="1">Диски 1</option>
-            <option value="2">Диски 2</option>
-            <option value="3">Диски 3</option>
-            <option value="4">Диски 4</option>
-          </select>
-        </label>
-
-        <label>
-          Цвет кузова
-          <input type="color" id="colorPicker" value="#ff0000">
-        </label>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- REVIEWS -->
-<section id="reviews" class="luxury-section">
-  <div class="container">
-    <h2>Отзывы</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <img src="review1.png" alt="Отзыв 1">
-        <p>"ЭПОПЕЯ — это космос. Мощь, стиль и уникальность."</p>
-      </div>
-      <div class="review-card">
-        <img src="review2.png" alt="Отзыв 2">
-        <p>"Лучший автомобиль, который я когда-либо видел."</p>
+  <!-- ОТЗЫВЫ -->
+  <section id="reviews" class="luxury-section">
+    <div class="container">
+      <h2>Отзывы</h2>
+      <div class="reviews-grid">
+        <div class="review-card"><img src="review1.png" alt="Отзыв 1"></div>
+        <div class="review-card"><img src="review2.png" alt="Отзыв 2"></div>
+        <div class="review-card"><img src="review3.png" alt="Отзыв 3"></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="luxury-section">
-  <div class="container">
-    <h2>Контакты</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Телефон</h3>
-        <p>+7#######</p>
-      </div>
-      <div class="contact-card">
-        <h3>Адрес</h3>
-        <p>######</p>
-      </div>
-      <div class="contact-card">
-        <h3>Форма связи</h3>
-        <p>Нажмите “Связаться” — откроется форма.</p>
+  <!-- КОНТАКТЫ -->
+  <section id="contact" class="luxury-section">
+    <div class="container">
+      <h2>Контакты</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Телефон</h3>
+          <p>+7#######</p>
+        </div>
+        <div class="contact-card">
+          <h3>Адрес</h3>
+          <p>######</p>
+        </div>
+        <div class="contact-card">
+          <h3>Форма связи</h3>
+          <p>Нажмите “Связаться” — откроется форма.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="modalClose">&times;</span>
-    <h3>Оставьте заявку</h3>
-    <p>Заполните форму, и мы свяжемся с вами.</p>
-    <button class="btn" id="openFormBtn">Открыть форму</button>
-  </div>
-</div>
+</main>
 
 <script src="script.js"></script>
 </body>
