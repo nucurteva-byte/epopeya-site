@@ -17,6 +17,7 @@ updateCar();
 if (modelSelect) modelSelect.addEventListener("change", updateCar);
 if (wheelSelect) wheelSelect.addEventListener("change", updateCar);
 
+
 // ====== MODAL + GOOGLE FORM ======
 const modal = document.getElementById("modal");
 const openModalBtn = document.getElementById("openModalBtn");
@@ -35,3 +36,22 @@ if (closeBtn)
 window.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
+
+
+// ====== ВИДЕО ОТЗЫВ ======
+const reviewVideo = document.getElementById("reviewVideo");
+const videoBtn = document.getElementById("videoBtn");
+
+if (reviewVideo && videoBtn) {
+  reviewVideo.play(); // старт
+
+  videoBtn.addEventListener("click", () => {
+    if (reviewVideo.paused) {
+      reviewVideo.play();
+      videoBtn.textContent = "⏸️ Пауза";
+    } else {
+      reviewVideo.pause();
+      videoBtn.textContent = "▶️ Воспроизвести";
+    }
+  });
+}
