@@ -38,14 +38,13 @@ window.addEventListener("click", (e) => {
 });
 
 
-// ====== ВИДЕО ОТЗЫВ ======
 const reviewVideo = document.getElementById("reviewVideo");
 const videoBtn = document.getElementById("videoBtn");
 
 if (reviewVideo && videoBtn) {
 
-  // Авто-старт без звука
-  reviewVideo.play().catch(() => {});
+  // НЕ запускаем автоматом, только если пользователь нажмёт
+  // (чтобы не было блокировки браузером)
 
   videoBtn.addEventListener("click", () => {
     if (reviewVideo.muted) {
