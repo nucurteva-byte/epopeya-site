@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #070707;
+  background: radial-gradient(circle at top, #0d0d0d, #050505);
   color: #fff;
 }
 
@@ -22,9 +22,10 @@ body {
   position: fixed;
   inset: 0 0 auto 0;
   background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   z-index: 1000;
   padding: 15px 0;
+  box-shadow: 0 0 40px rgba(201,160,42,0.15);
 }
 
 .header-inner {
@@ -34,8 +35,12 @@ body {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(201,160,42,0.6),
+    0 0 25px rgba(201,160,42,0.4);
 }
 
 .nav {
@@ -46,7 +51,8 @@ body {
 .nav a {
   color: #fff;
   text-decoration: none;
-  opacity: 0.85;
+  opacity: 0.75;
+  transition: opacity 0.3s;
 }
 
 .nav a:hover {
@@ -55,37 +61,57 @@ body {
 
 .btn {
   padding: 10px 18px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
-  background: #c9a02a;
+  background: linear-gradient(135deg, #ffd76a, #c9a02a);
   font-weight: 700;
   cursor: pointer;
+  box-shadow:
+    0 0 15px rgba(201,160,42,0.6),
+    0 0 40px rgba(201,160,42,0.3);
 }
 
-/* ===================== SECTIONS ===================== */
+/* ===================== HERO ===================== */
 .hero {
-  padding-top: 120px;
+  padding-top: 140px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 56px;
+  font-size: 58px;
   letter-spacing: 2px;
+  animation: glowPulse 3s infinite alternate;
 }
 
 .subtitle {
   margin-top: 20px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
+/* ===================== ANIMATIONS ===================== */
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 10px rgba(201,160,42,0.5),
+      0 0 25px rgba(201,160,42,0.4);
+  }
+  to {
+    text-shadow:
+      0 0 20px rgba(201,160,42,0.9),
+      0 0 60px rgba(201,160,42,0.7);
+  }
+}
+
+/* ===================== SECTIONS ===================== */
 .luxury-section {
-  padding: 80px 0;
+  padding: 90px 0;
 }
 
 h2 {
   margin-bottom: 40px;
   text-align: center;
   font-size: 36px;
+  text-shadow: 0 0 15px rgba(201,160,42,0.4);
 }
 
 /* ===================== GRIDS ===================== */
@@ -95,7 +121,7 @@ h2 {
 .model-grid,
 .contact-grid {
   display: grid;
-  gap: 20px;
+  gap: 25px;
 }
 
 .spec-grid,
@@ -112,13 +138,33 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.spec-card,
-.car-card,
-.model-card,
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 20px;
+/* ===================== CAR CARDS (КОЛЛЕКЦИЯ) ===================== */
+.car-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.car-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(201,160,42,0.35), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.car-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 25px rgba(201,160,42,0.6),
+    0 0 80px rgba(201,160,42,0.4);
+}
+
+.car-card:hover::before {
+  opacity: 1;
 }
 
 .car-card img {
@@ -127,14 +173,14 @@ h2 {
 }
 
 .car-info {
-  padding-top: 10px;
+  padding: 15px;
 }
 
 /* ===================== DISK BUILDER ===================== */
 .style-builder {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -147,26 +193,30 @@ h2 {
 .style-preview::after {
   content: "";
   position: absolute;
-  bottom: 5px;
-  width: 70%;
-  height: 25px;
-  background: radial-gradient(ellipse, rgba(0,0,0,0.6), transparent 70%);
-  filter: blur(12px);
-  z-index: 0;
+  bottom: -10px;
+  width: 75%;
+  height: 30px;
+  background: radial-gradient(ellipse, rgba(201,160,42,0.6), transparent 70%);
+  filter: blur(18px);
 }
 
 .car-image {
   max-width: 600px;
   width: 100%;
-  position: relative;
-  z-index: 2;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+  filter:
+    drop-shadow(0 0 25px rgba(201,160,42,0.7))
+    drop-shadow(0 0 60px rgba(201,160,42,0.5));
 }
 
-/* ===================== ANIMATION ===================== */
+/* ===================== DISK ANIMATION ===================== */
 .fade-out {
   opacity: 0;
-  transform: scale(0.97);
+  transform: scale(0.95);
+  filter: blur(2px);
 }
 
 .fade-in {
@@ -177,17 +227,19 @@ h2 {
 /* ===================== CONTROLS ===================== */
 .style-controls {
   background: rgba(255,255,255,0.06);
-  padding: 25px;
-  border-radius: 14px;
+  padding: 30px;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0 0 40px rgba(201,160,42,0.15);
+  box-shadow:
+    0 0 30px rgba(201,160,42,0.35),
+    inset 0 0 25px rgba(201,160,42,0.15);
 }
 
 .style-controls select {
-  padding: 12px;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 12px;
   background: #111;
   color: #fff;
   border: 1px solid #333;
@@ -198,16 +250,17 @@ h2 {
 .review {
   background: rgba(255,255,255,0.06);
   padding: 25px;
-  border-radius: 14px;
+  border-radius: 16px;
   text-align: center;
   margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(201,160,42,0.25);
 }
 
 .reviews-grid img,
 .review img {
   max-width: 320px;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 16px;
   margin-bottom: 15px;
 }
 
@@ -216,7 +269,7 @@ h2 {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   justify-content: center;
   align-items: center;
   z-index: 2000;
@@ -225,10 +278,11 @@ h2 {
 .modal-content {
   background: #111;
   padding: 30px;
-  border-radius: 14px;
+  border-radius: 18px;
   width: 90%;
   max-width: 900px;
   position: relative;
+  box-shadow: 0 0 60px rgba(201,160,42,0.5);
 }
 
 .close {
@@ -258,6 +312,6 @@ h2 {
   }
 
   .hero h1 {
-    font-size: 36px;
+    font-size: 38px;
   }
 }
