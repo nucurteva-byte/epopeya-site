@@ -11,13 +11,8 @@ function updateCar() {
   const wheel = wheelSelect.value;
   const color = colorPicker.value;
 
-  // Цветная машина с дисками
   carColor.src = `${model}_w${wheel}.png`;
-
-  // Ч/Б кузов
   carMask.src = `${model}.png`;
-
-  // Цвет (без прозрачности)
   colorOverlay.style.backgroundColor = color;
 }
 
