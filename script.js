@@ -38,15 +38,27 @@ window.addEventListener("click", (e) => {
 });
 
 
-const video = document.getElementById("reviewVideo");
-const btn = document.getElementById("playPauseBtn");
+const reviewVideo = document.getElementById("reviewVideo");
+const videoBtn = document.getElementById("videoPlayPause");
+const soundBtn = document.getElementById("videoSound");
 
-btn.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-    btn.textContent = "Пауза";
-  } else {
-    video.pause();
-    btn.textContent = "Воспроизвести";
-  }
-});
+if (reviewVideo && videoBtn && soundBtn) {
+
+  // старт: звук выключен
+  reviewVideo.muted = true;
+
+  videoBtn.addEventListener("click", () => {
+    if (reviewVideo.paused) {
+      reviewVideo.play();
+      videoBtn.textContent = "Пауза";
+    } else {
+      reviewVideo.pause();
+      videoBtn.textContent = "Воспроизвести";
+    }
+  });
+
+  soundBtn.addEventListener("click", () => {
+    reviewVideo.muted = false;
+    soundBtn.textContent = "Звук включен";
+  });
+}
