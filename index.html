@@ -236,14 +236,21 @@
 
 <!-- ВИДЕО ОТЗЫВ -->
 <div class="video-review">
-<video id="reviewVideo" width="320" height="568" controls>
-  <source src="video.mp4" type="video/mp4">
-  Ваш браузер не поддерживает видео.
-</video>
+  <div class="video-frame">
+    <video id="reviewVideo" class="video">
+      <source src="video.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
 
-  <div class="video-controls">
-    <button id="playPauseBtn">Пауза</button>
-    <button id="muteBtn">Звук</button>
+    <div class="video-controls">
+      <button id="videoPlayPause" class="video-btn">Воспроизвести</button>
+      <button id="videoSound" class="video-btn sound-btn">Включить звук</button>
+    </div>
+  </div>
+
+  <div class="video-desc">
+    <h3>Видеоотзыв</h3>
+    <p>Смотреть отзыв прямо здесь — без переходов.</p>
   </div>
 </div>
     </div>
