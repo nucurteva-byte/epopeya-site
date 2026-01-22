@@ -1,51 +1,109 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; background: #070707; color: #fff; }
+/* ===================== GLOBAL ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+body {
+  font-family: Arial, sans-serif;
+  background: #070707;
+  color: #fff;
+}
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===================== HEADER ===================== */
 .header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   background: rgba(0,0,0,0.8);
   backdrop-filter: blur(8px);
   z-index: 1000;
   padding: 15px 0;
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; }
-.logo { font-size: 24px; font-weight: 700; }
-.nav { display: flex; gap: 15px; }
-.nav a { color: #fff; text-decoration: none; }
-.btn { padding: 10px 18px; border: none; cursor: pointer; background: #c9a02a; color: #000; font-weight: 700; border-radius: 8px; }
 
-.hero { padding-top: 110px; }
-.hero h1 { font-size: 56px; }
-.subtitle { font-size: 18px; margin-top: 20px; }
-
-.luxury-section { padding: 60px 0; }
-
-.spec-grid, .unique-grid, .collection-grid, .reviews-grid, .contact-grid, .model-grid {
-  display: grid; gap: 20px;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.spec-grid, .unique-grid, .collection-grid, .model-grid { grid-template-columns: repeat(3, 1fr); }
-.reviews-grid { grid-template-columns: repeat(3, 1fr); }
-.contact-grid { grid-template-columns: repeat(3, 1fr); }
 
-.spec-card, .car-card, .review-card, .contact-card, .model-card {
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  background: #c9a02a;
+  color: #000;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+/* ===================== SECTIONS ===================== */
+.hero {
+  padding-top: 110px;
+}
+
+.luxury-section {
+  padding: 60px 0;
+}
+
+/* ===================== COLLECTION / MODELS ===================== */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.car-card {
   background: rgba(255,255,255,0.06);
-  padding: 20px;
   border-radius: 12px;
+  overflow: hidden;
 }
 
-.car-card img, .review-card img { width: 100%; border-radius: 12px; }
+.car-card img {
+  width: 100%;
+}
 
+.car-info {
+  padding: 15px;
+}
+
+/* ===================== DISK BUILDER ===================== */
 .style-builder {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: start;
+  gap: 30px;
+  align-items: center;
 }
 
-.car-image { width: 100%; max-width: 600px; }
+.style-preview img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+}
 
 .style-controls {
   background: rgba(255,255,255,0.06);
@@ -56,14 +114,66 @@ body { font-family: Arial, sans-serif; background: #070707; color: #fff; }
   gap: 15px;
 }
 
-.style-controls label { display: flex; flex-direction: column; gap: 8px; font-weight: 500; }
-.style-controls select {
-  padding: 10px; border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(0,0,0,0.3); color: white;
+.style-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* MODAL */
+.style-controls select {
+  padding: 10px;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* ===================== REVIEWS (НОВЫЙ БЛОК) ===================== */
+.reviews-grid,
+.review {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.reviews-grid img,
+.review img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.reviews-grid p,
+.review p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.reviews-grid strong,
+.review strong {
+  display: block;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+/* ===================== CONTACT ===================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* ===================== MODAL ===================== */
 .modal {
   display: none;
   position: fixed;
@@ -73,6 +183,7 @@ body { font-family: Arial, sans-serif; background: #070707; color: #fff; }
   align-items: center;
   z-index: 2000;
 }
+
 .modal-content {
   background: #111;
   padding: 30px;
@@ -81,6 +192,7 @@ body { font-family: Arial, sans-serif; background: #070707; color: #fff; }
   max-width: 900px;
   position: relative;
 }
+
 .close {
   position: absolute;
   top: 15px;
@@ -89,11 +201,18 @@ body { font-family: Arial, sans-serif; background: #070707; color: #fff; }
   font-size: 24px;
 }
 
-/* RESPONSIVE */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
-  .nav { display: none; }
-  .style-builder { grid-template-columns: 1fr; }
-  .spec-grid, .unique-grid, .collection-grid, .model-grid, .reviews-grid, .contact-grid {
+  .nav {
+    display: none;
+  }
+
+  .collection-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .style-builder {
     grid-template-columns: 1fr;
   }
 }
