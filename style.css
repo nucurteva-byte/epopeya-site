@@ -249,8 +249,8 @@ body {
 
 .video-frame video {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-controls {
