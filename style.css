@@ -164,7 +164,7 @@ body {
 }
 
 .model-card::after {
-  content: "₽";
+  content: "грамм";
   position: absolute;
   top: 12px;
   right: 16px;
