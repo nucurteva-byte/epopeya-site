@@ -181,4 +181,37 @@ body {
   .style-builder {
     grid-template-columns: 1fr;
   }
+  /* ===== LUX GLOW EFFECT ===== */
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(201, 160, 42, 0);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(201, 160, 42, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(201, 160, 42, 0);
+  }
+}
+
+/* СВЕЧЕНИЕ ДЛЯ ЗАГОЛОВКА */
+.hero h1 {
+  text-shadow: 0 0 15px rgba(201, 160, 42, 0.7);
+}
+
+/* СВЕЧЕНИЕ ДЛЯ КАРТОЧЕК В КОЛЛЕКЦИИ */
+.collection-grid .car-card {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* СВЕЧЕНИЕ ДЛЯ КАРТОЧЕК ЦЕН */
+.model-card {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* СВЕЧЕНИЕ ДЛЯ КНОПОК */
+.btn {
+  box-shadow: 0 0 15px rgba(201, 160, 42, 0.8);
+}
 }
