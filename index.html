@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -25,41 +25,52 @@
   </div>
 </header>
 
-<section id="style" class="style-section">
+<section id="style" class="luxury-section">
   <div class="container">
     <h2>Создай стиль</h2>
 
-    <div class="car-preview">
-      <img id="carColor" class="car-img" src="" alt="Цветная машина">
-      <img id="carMask" class="car-mask" src="" alt="Кузов">
-      <div id="colorOverlay" class="color-overlay"></div>
-    </div>
+    <div class="style-builder">
 
-    <div class="style-controls">
-      <label>
-        Модель
-        <select id="model">
-          <option value="anapovskiy_mazut">Анапский мазут</option>
-          <option value="zadumchivaya_sliva">Задумчивая слива</option>
-          <option value="gzhel">Гжель</option>
-          <option value="ashkudishka">Ашкудишка Личи</option>
-        </select>
-      </label>
+      <div class="style-preview">
+        <div class="car-canvas">
+          <!-- цветная машина с дисками -->
+          <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png" alt="Цветная машина">
 
-      <label>
-        Диски
-        <select id="wheel">
-          <option value="1">Диски 1</option>
-          <option value="2">Диски 2</option>
-          <option value="3">Диски 3</option>
-          <option value="4">Диски 4</option>
-        </select>
-      </label>
+          <!-- ч/б кузов -->
+          <img id="carMask" class="car-mask" src="anapovskiy_mazut.png" alt="Кузов">
 
-      <label>
-        Цвет кузова
-        <input type="color" id="colorPicker" value="#ff0000">
-      </label>
+          <!-- цветовой слой (только для кузова) -->
+          <div id="colorOverlay" class="color-overlay"></div>
+        </div>
+      </div>
+
+      <div class="style-controls">
+        <label>
+          Модель
+          <select id="model">
+            <option value="anapovskiy_mazut">Анапский мазут</option>
+            <option value="zadumchivaya_sliva">Задумчивая слива</option>
+            <option value="gzhel">Гжель</option>
+            <option value="ashkudishka">Ашкудишка Личи</option>
+          </select>
+        </label>
+
+        <label>
+          Диски
+          <select id="wheel">
+            <option value="1">Диски 1</option>
+            <option value="2">Диски 2</option>
+            <option value="3">Диски 3</option>
+            <option value="4">Диски 4</option>
+          </select>
+        </label>
+
+        <label>
+          Цвет кузова
+          <input type="color" id="colorPicker" value="#ff0000">
+        </label>
+      </div>
+
     </div>
   </div>
 </section>
@@ -70,11 +81,11 @@
     <div class="reviews-grid">
       <div class="review-card">
         <img src="review1.png" alt="Отзыв 1">
-        <p>"ЭПОПЕЯ — это космос. Мощь, стиль и уникальность. Никогда не видел ничего подобного."</p>
+        <p>"ЭПОПЕЯ — это космос. Мощь, стиль и уникальность."</p>
       </div>
       <div class="review-card">
         <img src="review2.png" alt="Отзыв 2">
-        <p>"Лучший автомобиль, который я когда-либо видел. Это не машина — это статус."</p>
+        <p>"Лучший автомобиль, который я когда-либо видел."</p>
       </div>
     </div>
   </div>
