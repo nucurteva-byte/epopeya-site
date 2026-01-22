@@ -25,41 +25,22 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#hero">Главная</a>
-  <a href="#specs">Характеристики</a>
-  <a href="#unique">Уникальность</a>
-  <a href="#collection">Коллекция</a>
-  <a href="#style">Создай стиль</a>
-  <a href="#reviews">Отзывы</a>
-  <a href="#contact">Контакты</a>
-</div>
-
-<section id="hero" class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>СВО — ЭПОПЕЯ</h1>
-      <p class="subtitle">Создай свой уникальный стиль</p>
-    </div>
-    <div class="hero-image">
-      <img src="hero.png" alt="hero">
-    </div>
-  </div>
-</section>
-
 <section id="style" class="luxury-section">
   <div class="container">
     <h2>Создай стиль</h2>
 
     <div class="style-builder">
+
+      <!-- Превью -->
       <div class="style-preview">
         <div class="car-canvas">
-          <img id="carColor" class="car-color" src="" alt="цветная машина">
-          <img id="carMask" class="car-mask" src="" alt="ч/б кузов">
+          <img id="carColor" class="car-color" src="" alt="Цветная машина">
+          <img id="carMask" class="car-mask" src="" alt="Ч/Б кузов">
           <div id="colorOverlay" class="color-overlay"></div>
         </div>
       </div>
 
+      <!-- Управление -->
       <div class="style-controls">
         <label>
           Модель
@@ -77,6 +58,7 @@
             <option value="1">Диски 1</option>
             <option value="2">Диски 2</option>
             <option value="3">Диски 3</option>
+            <option value="4">Диски 4</option>
           </select>
         </label>
 
@@ -85,54 +67,10 @@
           <input type="color" id="colorPicker" value="#ff0000">
         </label>
       </div>
+
     </div>
   </div>
 </section>
-
-<section id="reviews" class="luxury-section">
-  <div class="container">
-    <h2>Отзывы</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <img src="review1.png" alt="Отзыв 1">
-        <p>"ЭПОПЕЯ — это космос. Мощь, стиль и уникальность."</p>
-      </div>
-      <div class="review-card">
-        <img src="review2.png" alt="Отзыв 2">
-        <p>"Лучший автомобиль, который я когда-либо видел."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="luxury-section">
-  <div class="container">
-    <h2>Контакты</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Телефон</h3>
-        <p>+7#######</p>
-      </div>
-      <div class="contact-card">
-        <h3>Адрес</h3>
-        <p>######</p>
-      </div>
-      <div class="contact-card">
-        <h3>Форма связи</h3>
-        <p>Нажмите “Связаться” — откроется форма.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="modalClose">&times;</span>
-    <h3>Оставьте заявку</h3>
-    <p>Заполните форму, и мы свяжемся с вами.</p>
-    <button class="btn" id="openFormBtn">Открыть форму</button>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
