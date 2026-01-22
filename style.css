@@ -258,7 +258,40 @@ body {
 .video-btn:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+.video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(201, 160, 42, 0.55);
+}
 
+.video-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.video-btn {
+  padding: 10px 18px;
+  border: none;
+  background: rgba(201, 160, 42, 0.9);
+  color: #000;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.sound-btn {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
 /* ===================== CONTACT ===================== */
 .contact-grid {
   display: grid;
