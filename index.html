@@ -138,18 +138,22 @@
 
     <div class="style-builder">
 
-      <div class="style-preview">
+<div class="style-preview">
 
-        <!-- ЦВЕТНАЯ БАЗА -->
-        <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png">
+  <div class="car-canvas">
 
-        <!-- Ч/Б КУЗОВ -->
-        <img id="carMask" class="car-mask" src="anapovskiy_mazut.png">
+    <!-- цветная база -->
+    <img id="carColor" class="layer color" src="anapovskiy_mazut_w1.png">
 
-        <!-- ЦВЕТ -->
-        <div id="colorOverlay" class="color-overlay"></div>
+    <!-- ч/б кузов -->
+    <img id="carMask" class="layer mask" src="anapovskiy_mazut.png">
 
-      </div>
+    <!-- цвет -->
+    <div id="colorOverlay" class="layer overlay"></div>
+
+  </div>
+
+</div>
 
       <div class="style-controls">
         <label>
@@ -230,6 +234,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
