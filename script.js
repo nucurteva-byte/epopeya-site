@@ -39,20 +39,14 @@ window.addEventListener("click", (e) => {
 
 
 const video = document.getElementById("reviewVideo");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const muteBtn = document.getElementById("muteBtn");
+const btn = document.getElementById("playPauseBtn");
 
-playPauseBtn.addEventListener("click", () => {
+btn.addEventListener("click", () => {
   if (video.paused) {
     video.play();
-    playPauseBtn.textContent = "Пауза";
+    btn.textContent = "Пауза";
   } else {
     video.pause();
-    playPauseBtn.textContent = "Воспроизвести";
+    btn.textContent = "Воспроизвести";
   }
-});
-
-muteBtn.addEventListener("click", () => {
-  video.muted = !video.muted;
-  muteBtn.textContent = video.muted ? "Включить звук" : "Звук";
 });
