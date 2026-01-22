@@ -43,15 +43,18 @@ const reviewVideo = document.getElementById("reviewVideo");
 const videoBtn = document.getElementById("videoBtn");
 
 if (reviewVideo && videoBtn) {
-  reviewVideo.play(); // старт
+
+  // Авто-старт без звука
+  reviewVideo.play().catch(() => {});
 
   videoBtn.addEventListener("click", () => {
-    if (reviewVideo.paused) {
+    if (reviewVideo.muted) {
+      reviewVideo.muted = false;
+      videoBtn.textContent = "🔇 Выключить звук";
       reviewVideo.play();
-      videoBtn.textContent = "⏸️ Пауза";
     } else {
-      reviewVideo.pause();
-      videoBtn.textContent = "▶️ Воспроизвести";
+      reviewVideo.muted = true;
+      videoBtn.textContent = "🔊 Включить звук";
     }
   });
 }
