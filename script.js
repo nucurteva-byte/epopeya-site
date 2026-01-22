@@ -38,22 +38,21 @@ window.addEventListener("click", (e) => {
 });
 
 
-const reviewVideo = document.getElementById("reviewVideo");
-const videoBtn = document.getElementById("videoBtn");
+const video = document.getElementById("reviewVideo");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const muteBtn = document.getElementById("muteBtn");
 
-if (reviewVideo && videoBtn) {
+playPauseBtn.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    playPauseBtn.textContent = "Пауза";
+  } else {
+    video.pause();
+    playPauseBtn.textContent = "Воспроизвести";
+  }
+});
 
-  // НЕ запускаем автоматом, только если пользователь нажмёт
-  // (чтобы не было блокировки браузером)
-
-  videoBtn.addEventListener("click", () => {
-    if (reviewVideo.muted) {
-      reviewVideo.muted = false;
-      videoBtn.textContent = "🔇 Выключить звук";
-      reviewVideo.play();
-    } else {
-      reviewVideo.muted = true;
-      videoBtn.textContent = "🔊 Включить звук";
-    }
-  });
-}
+muteBtn.addEventListener("click", () => {
+  video.muted = !video.muted;
+  muteBtn.textContent = video.muted ? "Включить звук" : "Звук";
+});
