@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СВО — Статус Вне Ограничений | ЭПОПЕЯ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -25,21 +25,37 @@
   </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero">Главная</a>
+  <a href="#specs">Характеристики</a>
+  <a href="#unique">Уникальность</a>
+  <a href="#collection">Коллекция</a>
+  <a href="#style">Создай стиль</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#contact">Контакты</a>
+</div>
+
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>СВО — ЭПОПЕЯ</h1>
+      <p class="subtitle">Создай свой уникальный стиль</p>
+    </div>
+    <div class="hero-image">
+      <img src="hero.png" alt="hero">
+    </div>
+  </div>
+</section>
+
 <section id="style" class="luxury-section">
   <div class="container">
     <h2>Создай стиль</h2>
 
     <div class="style-builder">
-
       <div class="style-preview">
         <div class="car-canvas">
-          <!-- цветная машина с дисками -->
-          <img id="carColor" class="car-color" src="anapovskiy_mazut_w1.png" alt="Цветная машина">
-
-          <!-- ч/б кузов -->
-          <img id="carMask" class="car-mask" src="anapovskiy_mazut.png" alt="Кузов">
-
-          <!-- цветовой слой (только для кузова) -->
+          <img id="carColor" class="car-color" src="" alt="цветная машина">
+          <img id="carMask" class="car-mask" src="" alt="ч/б кузов">
           <div id="colorOverlay" class="color-overlay"></div>
         </div>
       </div>
@@ -61,7 +77,6 @@
             <option value="1">Диски 1</option>
             <option value="2">Диски 2</option>
             <option value="3">Диски 3</option>
-            <option value="4">Диски 4</option>
           </select>
         </label>
 
@@ -70,7 +85,6 @@
           <input type="color" id="colorPicker" value="#ff0000">
         </label>
       </div>
-
     </div>
   </div>
 </section>
@@ -110,6 +124,15 @@
     </div>
   </div>
 </section>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="modalClose">&times;</span>
+    <h3>Оставьте заявку</h3>
+    <p>Заполните форму, и мы свяжемся с вами.</p>
+    <button class="btn" id="openFormBtn">Открыть форму</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
