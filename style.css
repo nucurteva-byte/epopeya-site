@@ -242,6 +242,9 @@ body {
   overflow: hidden;
   box-shadow: 0 0 25px rgba(201, 160, 42, 0.65);
   background: #111;
+
+  /* Соотношение 3:4 */
+  aspect-ratio: 3 / 4;
 }
 
 .video-frame video {
