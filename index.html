@@ -25,13 +25,110 @@
   </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero">Главная</a>
+  <a href="#specs">Характеристики</a>
+  <a href="#unique">Уникальность</a>
+  <a href="#collection">Коллекция</a>
+  <a href="#style">Создай стиль</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#contact">Контакты</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>ЭПОПЕЯ — Статус Вне Ограничений</h1>
+      <p class="subtitle">Уникальный автомобиль, который ломает правила и задаёт стиль.</p>
+      <button class="btn">Узнать больше</button>
+    </div>
+    <div class="hero-image">
+      <img src="hero.png" alt="ЭПОПЕЯ">
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs" class="luxury-section">
+  <div class="container">
+    <h2>Характеристики</h2>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Скорость</h3>
+        <p>0-100 за 2.3 секунды</p>
+      </div>
+      <div class="spec-card">
+        <h3>Мощность</h3>
+        <p>1200 л.с.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Дизайн</h3>
+        <p>Лимитированные узоры</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIQUE -->
+<section id="unique" class="luxury-section">
+  <div class="container">
+    <h2>Уникальность</h2>
+    <div class="unique-grid">
+      <div class="spec-card">
+        <h3>Ручная работа</h3>
+        <p>Каждый узор — уникален.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Эксклюзив</h3>
+        <p>Только ограниченный тираж.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Статус</h3>
+        <p>Это не просто машина — это символ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section id="collection" class="luxury-section">
+  <div class="container">
+    <h2>Коллекция</h2>
+    <div class="collection-grid">
+      <div class="car-card">
+        <img src="anapovskiy_mazut_w1.png" alt="Анапский мазут">
+        <div class="car-info">
+          <h3>Анапский мазут</h3>
+          <p>Лимитированная коллекция под заказ.<br>Цена: 670000$</p>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="zadumchivaya_sliva_w1.png" alt="Задумчивая слива">
+        <div class="car-info">
+          <h3>Задумчивая слива</h3>
+          <p>Лимитированная коллекция под заказ.<br>Цена: 670000$</p>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img src="gzhel_w1.png" alt="Гжель">
+        <div class="car-info">
+          <h3>Гжель</h3>
+          <p>Лимитированная коллекция под заказ.<br>Цена: 670000$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STYLE BUILDER -->
 <section id="style" class="luxury-section">
   <div class="container">
     <h2>Создай стиль</h2>
 
     <div class="style-builder">
-
-      <!-- Превью -->
       <div class="style-preview">
         <div class="car-canvas">
           <img id="carColor" class="car-color" src="" alt="Цветная машина">
@@ -40,7 +137,6 @@
         </div>
       </div>
 
-      <!-- Управление -->
       <div class="style-controls">
         <label>
           Модель
@@ -67,10 +163,56 @@
           <input type="color" id="colorPicker" value="#ff0000">
         </label>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="luxury-section">
+  <div class="container">
+    <h2>Отзывы</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <img src="review1.png" alt="Отзыв 1">
+        <p>"ЭПОПЕЯ — это космос. Мощь, стиль и уникальность."</p>
+      </div>
+      <div class="review-card">
+        <img src="review2.png" alt="Отзыв 2">
+        <p>"Лучший автомобиль, который я когда-либо видел."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="luxury-section">
+  <div class="container">
+    <h2>Контакты</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Телефон</h3>
+        <p>+7#######</p>
+      </div>
+      <div class="contact-card">
+        <h3>Адрес</h3>
+        <p>######</p>
+      </div>
+      <div class="contact-card">
+        <h3>Форма связи</h3>
+        <p>Нажмите “Связаться” — откроется форма.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="modalClose">&times;</span>
+    <h3>Оставьте заявку</h3>
+    <p>Заполните форму, и мы свяжемся с вами.</p>
+    <button class="btn" id="openFormBtn">Открыть форму</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
