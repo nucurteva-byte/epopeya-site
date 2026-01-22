@@ -3,19 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const wheelSelect = document.getElementById("wheel");
   const colorPicker = document.getElementById("colorPicker");
 
-  const carColor = document.getElementById("carColor");
+  const carColorImage = document.getElementById("carColor");
+  const carMaskImage = document.getElementById("carMask");
   const colorOverlay = document.getElementById("colorOverlay");
 
   function updateCar() {
     const model = modelSelect.value;
     const wheel = wheelSelect.value;
 
-    // Цветная картинка (фон + диски)
-    carColor.src = `${model}_w${wheel}.png`;
-
-    // 🔥 Ч/Б кузов как МАСКА
-    colorOverlay.style.webkitMaskImage = `url(${model}.png)`;
-    colorOverlay.style.maskImage = `url(${model}.png)`;
+    carColorImage.src = `${model}_w${wheel}.png`;
+    carMaskImage.src = `${model}.png`;
   }
 
   function updateColor() {
@@ -26,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   wheelSelect.addEventListener("change", updateCar);
   colorPicker.addEventListener("input", updateColor);
 
-  // Инициализация
   updateCar();
   updateColor();
 });
